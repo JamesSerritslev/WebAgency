@@ -30,17 +30,17 @@ export default function ServicesPage() {
         description="A custom site for your business, plus search work that helps people find you. I do all three myself, and each one has its own page because each ranks, and sells, on its own."
         crumbs={[{ href: "/services", label: "Services" }]}
       />
-      <section className="mx-auto max-w-6xl px-5 py-16 md:px-8">
-        <div className="grid gap-6 md:grid-cols-3">
+      <section className="mx-auto max-w-6xl px-5 py-12 sm:px-6 sm:py-16 lg:px-8">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
             <article
               key={service.slug}
-              className="flex flex-col rounded-3xl border border-ink/10 bg-paper p-8"
+              className="flex min-w-0 flex-col rounded-3xl border border-ink/10 bg-paper p-6 sm:p-8"
             >
               <p className="text-sm font-semibold uppercase tracking-[0.16em] text-amber">
                 {service.eyebrow}
               </p>
-              <h2 className="mt-3 font-display text-3xl">{service.title}</h2>
+              <h2 className="mt-3 font-display text-2xl sm:text-3xl">{service.title}</h2>
               <p className="mt-4 flex-1 leading-relaxed text-slate">
                 {service.description}
               </p>

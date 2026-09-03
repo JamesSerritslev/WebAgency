@@ -29,16 +29,16 @@ export default function ProcessPage() {
         description="Discovery, structure, custom build, launch, and SEO work that helps people find your business."
         crumbs={[{ href: "/process", label: "Process" }]}
       />
-      <section className="mx-auto max-w-6xl px-5 py-16 md:px-8">
+      <section className="mx-auto max-w-6xl px-5 py-12 sm:px-6 sm:py-16 lg:px-8">
         <ol className="grid gap-6">
           {processSteps.map((step) => (
             <li
               key={step.number}
-              className="grid gap-4 rounded-3xl border border-ink/10 bg-paper p-8 md:grid-cols-[140px_1fr]"
+              className="grid gap-4 rounded-3xl border border-ink/10 bg-paper p-6 sm:p-8 lg:grid-cols-[140px_1fr]"
             >
               <p className="font-display text-4xl text-amber">{step.number}</p>
-              <div>
-                <h2 className="font-display text-3xl">{step.title}</h2>
+              <div className="min-w-0">
+                <h2 className="font-display text-2xl sm:text-3xl">{step.title}</h2>
                 <p className="mt-3 text-lg text-ink-soft">{step.summary}</p>
                 <p className="mt-3 leading-relaxed text-slate">{step.detail}</p>
               </div>

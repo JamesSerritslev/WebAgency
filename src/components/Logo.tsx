@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { BRAND_FULL, BRAND_MARK, BRAND_NAME, BRAND_SUFFIX } from "@/lib/brand";
+import { BRAND_FULL, BRAND_NAME, BRAND_SUFFIX } from "@/lib/brand";
 
 type LogoProps = {
   size?: "header" | "headerCompact" | "footer";
@@ -11,28 +12,23 @@ type LogoProps = {
 
 const sizes = {
   header: {
-    mark: "text-[2.2rem] leading-none md:text-[3.1rem]",
+    image: "h-9 md:h-11",
     suffix: "text-[0.6rem] tracking-[0.28em] md:text-[0.78rem] md:tracking-[0.3em]",
     tagline: "text-[0.62rem] tracking-[0.22em]",
     gap: "gap-0.5",
   },
   headerCompact: {
-    mark: "text-[1.6rem] leading-none md:text-[1.8rem]",
+    image: "h-7 md:h-8",
     suffix: "text-[0.55rem] tracking-[0.26em] md:text-[0.6rem]",
     tagline: "text-[0.55rem] tracking-[0.2em]",
     gap: "gap-0.5",
   },
   footer: {
-    mark: "text-4xl leading-none md:text-5xl",
+    image: "h-14 md:h-16",
     suffix: "text-[0.68rem] tracking-[0.3em] md:text-xs",
     tagline: "mt-4 text-sm tracking-[0.14em]",
     gap: "gap-1",
   },
-} as const;
-
-const letterColors = {
-  light: ["text-ink", "text-ink", "text-amber"],
-  dark: ["text-chalk", "text-chalk", "text-amber"],
 } as const;
 
 export function Logo({
@@ -44,38 +40,22 @@ export function Logo({
 }: LogoProps) {
   const scale = sizes[size];
   const suffixColor = theme === "dark" ? "text-chalk/70" : "text-ink-soft";
-  const colors = letterColors[theme];
   const isHeader = size === "header" || size === "headerCompact";
-
-  const mark = isHeader ? (
-    <span
-      className={`font-wordmark tracking-[-0.01em] transition-[font-size] duration-300 ease-out motion-reduce:transition-none ${scale.mark}`}
-      aria-hidden="true"
-    >
-      {BRAND_MARK.split("").map((letter, index) => (
-        <span key={`${letter}-${index}`} className={colors[index] ?? colors[0]}>
-          {letter}
-        </span>
-      ))}
-    </span>
-  ) : (
-    <span
-      className={`font-wordmark tracking-[-0.01em] ${scale.mark} ${
-        theme === "dark"
-          ? "wordmark-gradient wordmark-gradient-dark"
-          : "wordmark-gradient"
-      }`}
-    >
-      {BRAND_MARK}
-    </span>
-  );
+  const logoSrc = isHeader ? "/brand/cor-logo.png" : "/brand/cor-logo-dark.png";
 
   const content = (
     <span className={`inline-flex flex-col ${scale.gap} ${className}`.trim()}>
-      <span className="inline-flex items-end gap-2 md:gap-3">
-        {mark}
+      <span className={`inline-flex items-end gap-2 md:gap-3 ${isHeader ? "min-w-0" : "flex-wrap"}`}>
+        <Image
+          src={logoSrc}
+          alt=""
+          width={671}
+          height={298}
+          priority={isHeader}
+          className={`w-auto max-w-[38vw] sm:max-w-none transition-[height] duration-300 ease-out motion-reduce:transition-none ${scale.image}`}
+        />
         <span
-          className={`pb-1 font-sans font-semibold uppercase transition-[font-size,letter-spacing] duration-300 ease-out motion-reduce:transition-none md:pb-1.5 ${scale.suffix} ${suffixColor}`}
+          className={`pb-1 font-sans font-semibold uppercase transition-[font-size,letter-spacing] duration-300 ease-out motion-reduce:transition-none md:pb-1.5 ${isHeader ? "hidden xl:inline" : ""} ${scale.suffix} ${suffixColor}`}
         >
           {BRAND_SUFFIX}
         </span>
@@ -95,7 +75,7 @@ export function Logo({
   }
 
   return (
-    <Link href="/" className="group inline-block" aria-label={BRAND_NAME}>
+    <Link href="/" className="group inline-block min-w-0" aria-label={BRAND_NAME}>
       {content}
     </Link>
   );

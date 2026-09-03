@@ -26,7 +26,7 @@ export function Button({
   className = "",
   onClick,
 }: ButtonProps) {
-  const classes = `inline-flex min-h-12 items-center justify-center rounded-full border-2 px-7 py-3 text-[0.95rem] font-semibold leading-none transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cobalt motion-reduce:transition-none ${variants[variant]} ${loading ? "pointer-events-none opacity-70" : ""} ${className}`.trim();
+  const classes = `inline-flex min-h-12 max-w-full items-center justify-center rounded-full border-2 px-5 py-3 text-center text-[0.95rem] font-semibold leading-snug transition-colors sm:px-7 sm:leading-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cobalt motion-reduce:transition-none ${variants[variant]} ${loading ? "pointer-events-none opacity-70" : ""} ${className}`.trim();
 
   const inner = (
     <>

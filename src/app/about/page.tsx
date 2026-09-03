@@ -33,7 +33,7 @@ export default function AboutPage() {
         description={`I am ${OWNER_NAME}, and ${BRAND_NAME} is just me. I build custom websites and do the SEO for local businesses that cannot afford a slow, generic site.`}
         crumbs={[{ href: "/about", label: "About" }]}
       />
-      <article className="prose-page mx-auto max-w-3xl px-5 py-16 md:px-8">
+      <article className="prose-page mx-auto max-w-3xl px-5 py-12 sm:px-6 sm:py-16 lg:px-8">
         <p>
           My name is {OWNER_NAME}, and {BRAND_NAME} is a one-person shop. I
           named it for how I work: {BRAND_FULL}. I create the site, optimize
@@ -87,7 +87,9 @@ export default function AboutPage() {
           your town and your offer, I am.
         </p>
         <div className="mt-10">
-          <Button href="/contact">Work with me</Button>
+          <Button href="/contact" className="w-full sm:w-auto">
+            Work with me
+          </Button>
         </div>
       </article>
       <CtaBand />

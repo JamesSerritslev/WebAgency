@@ -76,16 +76,18 @@ export default async function ServicePage({ params }: Props) {
           { href: `/services/${service.slug}`, label: service.navLabel },
         ]}
       />
-      <section className="mx-auto grid max-w-6xl gap-12 px-5 py-16 md:grid-cols-[1fr_0.8fr] md:px-8">
-        <article className="prose-page max-w-2xl">
+      <section className="mx-auto grid max-w-6xl gap-12 px-5 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1fr_0.8fr] lg:px-8">
+        <article className="prose-page min-w-0 max-w-2xl">
           {paragraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
           <div className="mt-8">
-            <Button href="/contact">Talk about {service.navLabel.toLowerCase()}</Button>
+            <Button href="/contact" className="w-full sm:w-auto">
+              Talk about {service.navLabel.toLowerCase()}
+            </Button>
           </div>
         </article>
-        <aside className="h-fit rounded-3xl border border-ink/10 bg-paper p-8">
+        <aside className="h-fit min-w-0 rounded-3xl border border-ink/10 bg-paper p-6 sm:p-8">
           <h2 className="font-display text-2xl">Outcomes</h2>
           <ul className="mt-4 space-y-3 text-slate">
             {service.outcomes.map((item) => (

@@ -31,7 +31,7 @@ export default function FaqPage() {
         description="Cost, timelines, WordPress, SEO, AI visibility, and who owns the code. Written so search engines can quote them too."
         crumbs={[{ href: "/faq", label: "FAQ" }]}
       />
-      <section className="mx-auto max-w-3xl px-5 py-16 md:px-8">
+      <section className="mx-auto max-w-3xl px-5 py-12 sm:px-6 sm:py-16 lg:px-8">
         <FaqList items={faqs} />
         <p className="mt-8 text-slate">
           Full ranges and what each tier includes are on the{" "}

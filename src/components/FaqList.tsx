@@ -22,19 +22,21 @@ function FaqItem({ item }: { item: Faq }) {
       <h3>
         <button
           type="button"
-          className="flex w-full items-start justify-between gap-6 py-5 text-left"
+          className="flex w-full min-w-0 items-start justify-between gap-4 py-5 text-left sm:gap-6"
           aria-expanded={open}
           aria-controls={panelId}
           onClick={() => setOpen((value) => !value)}
         >
-          <span className="text-lg font-semibold text-ink">{item.question}</span>
-          <span aria-hidden="true" className="mt-1 text-amber">
+          <span className="min-w-0 text-base font-semibold text-ink sm:text-lg">
+            {item.question}
+          </span>
+          <span aria-hidden="true" className="mt-1 shrink-0 text-amber">
             {open ? "–" : "+"}
           </span>
         </button>
       </h3>
       {open ? (
-        <div id={panelId} className="pb-5 pr-10 leading-relaxed text-slate">
+        <div id={panelId} className="pb-5 pr-0 leading-relaxed text-slate sm:pr-10">
           <p>{item.answer}</p>
           {item.bullets ? (
             <ul className="mt-3 list-disc space-y-1.5 pl-5">

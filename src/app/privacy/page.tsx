@@ -24,7 +24,7 @@ export default function PrivacyPage() {
         description="This site collects only what you type into the form so I can reply."
         crumbs={[{ href: "/privacy", label: "Privacy" }]}
       />
-      <article className="prose-page mx-auto max-w-3xl px-5 py-16 md:px-8">
+      <article className="prose-page mx-auto max-w-3xl px-5 py-12 sm:px-6 sm:py-16 lg:px-8">
         <p>
           I use your name, email, phone (if you add one), business name, and
           message to answer your inquiry. The message is emailed to me at{" "}

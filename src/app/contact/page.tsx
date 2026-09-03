@@ -30,8 +30,8 @@ export default function ContactPage() {
         description="A short form. No twelve-field sales maze. It reaches me directly, you get a confirmation, and I reply with next steps."
         crumbs={[{ href: "/contact", label: "Contact" }]}
       />
-      <section className="mx-auto grid max-w-6xl gap-12 px-5 py-16 md:grid-cols-[0.85fr_1.15fr] md:px-8">
-        <div>
+      <section className="mx-auto grid max-w-6xl gap-12 px-5 py-12 sm:px-6 sm:py-16 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
+        <div className="min-w-0">
           <h2 className="font-display text-3xl">What to include</h2>
           <ul className="mt-5 space-y-3 text-slate">
             <li>What you sell and where customers find you today</li>
@@ -40,7 +40,7 @@ export default function ContactPage() {
           </ul>
           <p className="mt-8 text-sm text-slate">
             Prefer email? Write to me at{" "}
-            <a href={`mailto:${CONTACT_EMAIL}`} className="text-cobalt">
+            <a href={`mailto:${CONTACT_EMAIL}`} className="break-all text-cobalt">
               {CONTACT_EMAIL}
             </a>
             . This form sends to the same inbox, from {BRAND_NAME}.

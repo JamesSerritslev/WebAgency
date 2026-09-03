@@ -11,7 +11,7 @@ const initialState: ContactState = {
 };
 
 const fieldClass =
-  "mt-2 w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-ink outline-none transition focus:border-amber focus:ring-2 focus:ring-amber/30";
+  "mt-2 w-full min-w-0 max-w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-ink outline-none transition focus:border-amber focus:ring-2 focus:ring-amber/30";
 
 export function ContactForm() {
   const [state, formAction, pending] = useActionState(
@@ -21,7 +21,7 @@ export function ContactForm() {
 
   if (state.status === "success") {
     return (
-      <div className="rounded-3xl border border-ink/10 bg-paper p-8 md:p-10">
+      <div className="rounded-3xl border border-ink/10 bg-paper p-6 sm:p-8 md:p-10">
         <p className="text-sm font-semibold uppercase tracking-[0.16em] text-amber">
           Message sent
         </p>
@@ -45,11 +45,11 @@ export function ContactForm() {
   return (
     <form
       action={formAction}
-      className={`relative rounded-3xl border border-ink/10 bg-paper p-6 md:p-8 ${pending ? "form-busy" : ""}`}
+      className={`relative min-w-0 rounded-3xl border border-ink/10 bg-paper p-5 sm:p-6 md:p-8 ${pending ? "form-busy" : ""}`}
       noValidate
     >
-      <div className="grid gap-5 md:grid-cols-2">
-        <label className="block text-sm font-medium">
+      <div className="grid gap-5 sm:grid-cols-2">
+        <label className="block min-w-0 text-sm font-medium">
           Name
           <input
             name="name"
@@ -59,7 +59,7 @@ export function ContactForm() {
             className={fieldClass}
           />
         </label>
-        <label className="block text-sm font-medium">
+        <label className="block min-w-0 text-sm font-medium">
           Email
           <input
             name="email"
@@ -69,7 +69,7 @@ export function ContactForm() {
             className={fieldClass}
           />
         </label>
-        <label className="block text-sm font-medium">
+        <label className="block min-w-0 text-sm font-medium">
           Phone <span className="font-normal text-slate">(optional)</span>
           <input
             name="phone"
@@ -78,7 +78,7 @@ export function ContactForm() {
             className={fieldClass}
           />
         </label>
-        <label className="block text-sm font-medium">
+        <label className="block min-w-0 text-sm font-medium">
           Business name
           <input
             name="businessName"
@@ -89,7 +89,7 @@ export function ContactForm() {
           />
         </label>
       </div>
-      <label className="mt-5 block text-sm font-medium">
+      <label className="mt-5 block min-w-0 text-sm font-medium">
         What do you need?
         <textarea
           name="message"
@@ -112,7 +112,7 @@ export function ContactForm() {
         </p>
       ) : null}
       <div className="mt-6">
-        <Button type="submit" loading={pending}>
+        <Button type="submit" loading={pending} className="w-full sm:w-auto">
           Send the note
         </Button>
       </div>

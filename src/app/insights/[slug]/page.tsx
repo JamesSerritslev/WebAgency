@@ -54,7 +54,7 @@ export default async function ArticlePage({ params }: Props) {
           { href: `/insights/${article.slug}`, label: article.title },
         ]}
       />
-      <article className="prose-page mx-auto max-w-3xl px-5 py-16 md:px-8">
+      <article className="prose-page mx-auto max-w-3xl px-5 py-12 sm:px-6 sm:py-16 lg:px-8">
         {article.body.map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>
         ))}

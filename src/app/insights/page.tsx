@@ -30,10 +30,10 @@ export default function InsightsPage() {
         description="Short, practical pieces for owners who want search traffic without a template site."
         crumbs={[{ href: "/insights", label: "Insights" }]}
       />
-      <section className="mx-auto max-w-6xl px-5 py-16 md:px-8">
-        <ul className="grid gap-6 md:grid-cols-3">
+      <section className="mx-auto max-w-6xl px-5 py-12 sm:px-6 sm:py-16 lg:px-8">
+        <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {articles.map((article) => (
-            <li key={article.slug} className="rounded-3xl border border-ink/10 bg-paper p-7">
+            <li key={article.slug} className="min-w-0 rounded-3xl border border-ink/10 bg-paper p-6 sm:p-7">
               <p className="text-sm text-slate">{article.datePublished}</p>
               <h2 className="mt-3 font-display text-2xl">
                 <Link href={`/insights/${article.slug}`}>{article.title}</Link>

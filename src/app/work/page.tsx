@@ -28,23 +28,23 @@ export default function WorkPage() {
         description="Two live projects I built myself: Analogue Room and Standing Sun Wines, both custom sites with a search-ready foundation."
         crumbs={[{ href: "/work", label: "Work" }]}
       />
-      <section className="mx-auto max-w-6xl px-5 py-16 md:px-8">
+      <section className="mx-auto max-w-6xl px-5 py-12 sm:px-6 sm:py-16 lg:px-8">
         <div className="grid gap-10">
           {projects.map((project) => (
             <article
               key={project.slug}
-              className="grid overflow-hidden rounded-3xl border border-ink/10 bg-paper md:grid-cols-2"
+              className="grid min-w-0 overflow-hidden rounded-3xl border border-ink/10 bg-paper lg:grid-cols-2"
             >
               <Image
                 src={project.image}
                 alt={project.imageAlt}
                 width={1440}
                 height={900}
-                className="h-full max-h-[420px] w-full object-cover object-top"
+                className="h-52 w-full object-cover object-top sm:h-72 lg:h-full lg:max-h-[420px]"
               />
-              <div className="flex flex-col justify-center p-8">
+              <div className="flex flex-col justify-center p-6 sm:p-8">
                 <p className="text-sm text-slate">{project.category}</p>
-                <h2 className="mt-2 font-display text-3xl">{project.title}</h2>
+                <h2 className="mt-2 font-display text-2xl sm:text-3xl">{project.title}</h2>
                 <p className="mt-3 leading-relaxed text-slate">{project.summary}</p>
                 <Link
                   href={`/work/${project.slug}`}

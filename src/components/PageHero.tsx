@@ -14,9 +14,9 @@ export function PageHero({
 }) {
   return (
     <section className="border-b border-ink/8 bg-paper">
-      <div className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
+      <div className="mx-auto max-w-6xl px-5 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
         {crumbs ? (
-          <nav aria-label="Breadcrumb" className="mb-8 text-sm text-slate">
+          <nav aria-label="Breadcrumb" className="mb-6 text-sm text-slate sm:mb-8">
             <ol className="flex flex-wrap items-center gap-2">
               <li>
                 <Link href="/" className="hover:text-amber">
@@ -24,7 +24,7 @@ export function PageHero({
                 </Link>
               </li>
               {crumbs.map((item) => (
-                <li key={item.href} className="flex items-center gap-2">
+                <li key={item.href} className="flex min-w-0 items-center gap-2">
                   <span aria-hidden="true">/</span>
                   <Link href={item.href} className="hover:text-amber">
                     {item.label}
@@ -39,10 +39,10 @@ export function PageHero({
             {eyebrow}
           </p>
         ) : null}
-        <h1 className="mt-4 max-w-4xl font-display text-4xl leading-[1.1] text-ink md:text-6xl">
+        <h1 className="mt-4 max-w-4xl font-display text-[2rem] leading-[1.1] text-ink sm:text-4xl lg:text-6xl">
           {title}
         </h1>
-        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate">
+        <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate sm:mt-6 sm:text-lg">
           {description}
         </p>
       </div>
@@ -59,12 +59,12 @@ export function CtaBand({
 }) {
   return (
     <section className="bg-ink text-chalk">
-      <div className="mx-auto flex max-w-6xl flex-col items-start gap-6 px-5 py-16 md:flex-row md:items-center md:justify-between md:px-8 md:py-20">
-        <div className="max-w-2xl">
-          <h2 className="font-display text-3xl md:text-4xl">{title}</h2>
+      <div className="mx-auto flex max-w-6xl flex-col items-stretch gap-6 px-5 py-12 sm:items-start sm:px-6 sm:py-16 lg:flex-row lg:items-center lg:justify-between lg:px-8 lg:py-20">
+        <div className="max-w-2xl min-w-0">
+          <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl">{title}</h2>
           <p className="mt-3 text-chalk/75">{body}</p>
         </div>
-        <Button href="/contact" variant="primary">
+        <Button href="/contact" variant="primary" className="w-full shrink-0 sm:w-auto">
           Start a project
         </Button>
       </div>
