@@ -34,7 +34,7 @@ export const articles = [
       "When someone searches for a plumber nearby, a contractor for a remodel, a restaurant for tonight, or a store that ships, they want a name, hours, and a reason to call or visit. They are not reading a national blog.",
       "Local SEO starts with a site Google and maps tools can trust. That means consistent name and address details, pages for the services you actually offer, and photos that match the business. A custom site makes those pages easy to keep accurate.",
       "Citations matter. Directories, city listings, and industry sites should repeat the same facts. Mismatched hours or old phone numbers train search systems to doubt you. Monthly SEO includes checking and fixing those listings, not only writing blog posts.",
-      "Keywords should sound like customers, not agencies. People search for emergency plumber, kitchen contractor, or restaurant near them. Each of those phrases deserves a page or a section that answers it, plus internal links to contact, services, or the shop.",
+      "Keywords should sound like customers, not agencies. People search for emergency plumber, kitchen contractor, or restaurant near them. Each of those phrases deserves a page or a section that answers it, plus internal links to contact, services, or the shop. Growth and Full-Scale SEO also put Google Reviews on the website so visitors see proof before they call.",
       "Backlinks still help. A write-up from a local paper, a partnership with a nearby business, or a featured project page can send both people and ranking signals. That outreach is part of SEO work, not a one-week launch sprint.",
     ],
   },

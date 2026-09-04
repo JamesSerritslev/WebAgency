@@ -18,6 +18,7 @@ const extra: Record<string, string[]> = {
     "The website launches with an SEO foundation. Rankings that keep moving take continued work: new queries, cleaner titles, better internal links, and pages that match how people search this month, not last year.",
     "Keyword research for a local business is specific. People look for a plumber nearby, a contractor for a remodel, a restaurant for tonight, or a store that ships. I map those phrases to real URLs instead of stuffing them into one homepage.",
     "Local citations and backlinks still matter. Name, address, and hours should match across directories. I chase mentions from local press, partners, and events because they send both people and ranking signals.",
+    "Growth and Full-Scale SEO put Google Reviews on the website. Visitors see a rating and recent reviews before they call, and search systems get review schema that matches what people actually wrote. Full-Scale adds a review carousel on key pages and write-a-review prompts so new reviews keep coming.",
     "Heavy analysis means looking at what already ranks, where you leak, and which pages deserve the next write. I do that every month, and you get a real read on it instead of a 40-page PDF that never gets opened again.",
   ],
   "ai-visibility": [

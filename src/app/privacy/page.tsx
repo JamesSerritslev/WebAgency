@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Privacy",
   description:
-    "How I use contact form details at COR Web Solutions: only to reply about your project. No sale of personal information.",
+    "How I use contact form details and Google Analytics at COR Web Solutions. No sale of personal information.",
   path: "/privacy",
   keywords: ["privacy", "contact form privacy"],
 });
@@ -21,7 +21,7 @@ export default function PrivacyPage() {
       <PageHero
         eyebrow="Privacy"
         title="A short note on the contact form."
-        description="This site collects only what you type into the form so I can reply."
+        description="Contact form details stay with me. Analytics only tells me which pages people visit."
         crumbs={[{ href: "/privacy", label: "Privacy" }]}
       />
       <article className="prose-page mx-auto max-w-3xl px-5 py-12 sm:px-6 sm:py-16 lg:px-8">
@@ -36,6 +36,11 @@ export default function PrivacyPage() {
           unrelated mailing list.
           Hosting and email providers (such as Vercel and Resend) process the
           data only to deliver the site and the mail.
+        </p>
+        <p>
+          This site uses Google Analytics to see which pages people visit. Google
+          processes that data under its own terms. I do not use it to sell your
+          information.
         </p>
         <p>
           Questions about this note can go to{" "}

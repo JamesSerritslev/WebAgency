@@ -37,6 +37,6 @@ export const processSteps = [
     summary:
       "My search work helps people find your business: citations, backlinks, content, technical checks, and AI-ready answers.",
     detail:
-      "The site launches with a strong SEO foundation. Ongoing search work is how you stay visible as queries change, and I do that work myself.",
+      "The site launches with a strong SEO foundation. Ongoing search work is how you stay visible as queries change, and I do that work myself. Growth and Full-Scale SEO also put Google Reviews on the website.",
   },
 ] as const;

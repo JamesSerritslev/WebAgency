@@ -125,6 +125,7 @@ export const seoTiers: PricingTier[] = [
     includes: [
       "Keyword tracking (up to about 40 target terms, split by cluster and intent)",
       "Full review management: respond to every review across Google, Yelp, and similar platforms",
+      "Google Reviews website integration: star rating and recent reviews on the site, plus review schema",
       "Google Business Profile posting and optimization (events, offers, photos)",
       "Monthly reporting with week-to-week comparison and competitor benchmarking",
       "Content: 2 to 4 blog or landing pages per month, built around search clusters",
@@ -143,6 +144,7 @@ export const seoTiers: PricingTier[] = [
     includes: [
       "Full keyword tracking across all clusters, with ongoing expansion as new terms emerge",
       "Complete review and reputation management across all platforms",
+      "Google Reviews website integration on key pages: review carousel, write-a-review prompts, and schema that stays current as new reviews land",
       "Google Business Profile and local citation management across directories",
       "Weekly or bi-weekly reporting with a full analytics dashboard",
       "Content: dedicated landing pages, seasonal campaigns, and a blog cadence of 4 or more posts per month",

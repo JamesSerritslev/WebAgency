@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Archivo_Black, Fraunces, Instrument_Sans } from "next/font/google";
 import { Footer } from "@/components/Footer";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { Header } from "@/components/Header";
 import { IntroSplash } from "@/components/IntroSplash";
 import { JsonLd } from "@/components/JsonLd";
@@ -89,6 +90,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <div className="flex flex-1 flex-col">{children}</div>
         <Footer />
       </body>
+      <GoogleAnalytics />
     </html>
   );
 }
