@@ -1,4 +1,5 @@
 import { BRAND_FULL, BRAND_NAME, OWNER_NAME, TAGLINE } from "@/lib/brand";
+import { seoPlanLabel, websitePlanLabel } from "@/lib/content/plans";
 
 const INK = "#0F172A";
 const CHALK = "#F7F5F2";
@@ -77,6 +78,8 @@ export function inquiryEmailHtml(input: {
   email: string;
   phone: string;
   businessName: string;
+  websiteTier: string;
+  seoTier: string;
   message: string;
 }) {
   const emailLink = `<a href="mailto:${escapeHtml(input.email)}" style="color:${AMBER};text-decoration:none;">${escapeHtml(input.email)}</a>`;
@@ -96,6 +99,8 @@ export function inquiryEmailHtml(input: {
       ${fieldRow("Email", emailLink)}
       ${fieldRow("Phone", phoneValue)}
       ${fieldRow("Business", escapeHtml(input.businessName))}
+      ${fieldRow("Website", escapeHtml(websitePlanLabel(input.websiteTier)))}
+      ${fieldRow("SEO", escapeHtml(seoPlanLabel(input.seoTier)))}
     </table>
     <p style="margin:24px 0 8px;font-family:Arial,Helvetica,sans-serif;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:${AMBER};">
       Message
@@ -116,6 +121,8 @@ export function inquiryEmailText(input: {
   email: string;
   phone: string;
   businessName: string;
+  websiteTier: string;
+  seoTier: string;
   message: string;
 }) {
   return [
@@ -125,6 +132,8 @@ export function inquiryEmailText(input: {
     `Email: ${input.email}`,
     `Phone: ${input.phone || "Not provided"}`,
     `Business: ${input.businessName}`,
+    `Website: ${websitePlanLabel(input.websiteTier)}`,
+    `SEO: ${seoPlanLabel(input.seoTier)}`,
     "",
     input.message,
   ].join("\n");

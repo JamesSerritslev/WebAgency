@@ -1,9 +1,24 @@
 "use client";
 
 import Link from "next/link";
-import { useActionState } from "react";
+import { useActionState, useEffect, useState } from "react";
 import { Button } from "@/components/Button";
+import { PlanSelect } from "@/components/PlanSelect";
 import { submitContact, type ContactState } from "@/app/actions/contact";
+import {
+  clearContactDraft,
+  contactReturnPath,
+  emptyContactDraft,
+  readContactDraft,
+  saveContactDraft,
+  type ContactDraft,
+} from "@/lib/contact-draft";
+import {
+  isSeoPlan,
+  isWebsitePlan,
+  seoPlanOptions,
+  websitePlanOptions,
+} from "@/lib/content/plans";
 
 const initialState: ContactState = {
   status: "idle",
@@ -18,6 +33,49 @@ export function ContactForm() {
     submitContact,
     initialState,
   );
+  const [draft, setDraft] = useState<ContactDraft>(emptyContactDraft);
+
+  useEffect(() => {
+    const saved = readContactDraft();
+    const next = saved ?? emptyContactDraft();
+    const params = new URLSearchParams(window.location.search);
+    const website = params.get("website") ?? "";
+    const seo = params.get("seo") ?? "";
+
+    if (isWebsitePlan(website)) next.websiteTier = website;
+    if (isSeoPlan(seo)) next.seoTier = seo;
+    next.returnPath = contactReturnPath();
+
+    setDraft(next);
+    saveContactDraft(next);
+
+    if (website || seo || window.location.hash === "#contact-form") {
+      document.getElementById("contact-form")?.scrollIntoView({
+        block: "start",
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (state.status === "success") {
+      clearContactDraft();
+    }
+  }, [state.status]);
+
+  function updateDraft<K extends keyof ContactDraft>(
+    key: K,
+    value: ContactDraft[K],
+  ) {
+    setDraft((current) => {
+      const next = { ...current, [key]: value, returnPath: contactReturnPath() };
+      saveContactDraft(next);
+      return next;
+    });
+  }
+
+  function persistDraft() {
+    saveContactDraft({ ...draft, returnPath: contactReturnPath() });
+  }
 
   if (state.status === "success") {
     return (
@@ -44,9 +102,9 @@ export function ContactForm() {
 
   return (
     <form
+      id="contact-form"
       action={formAction}
-      className={`relative min-w-0 rounded-3xl border border-ink/10 bg-paper p-5 sm:p-6 md:p-8 ${pending ? "form-busy" : ""}`}
-      noValidate
+      className={`relative min-w-0 scroll-mt-28 rounded-3xl border border-ink/10 bg-paper p-5 sm:p-6 md:p-8 ${pending ? "form-busy" : ""}`}
     >
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="block min-w-0 text-sm font-medium">
@@ -56,6 +114,8 @@ export function ContactForm() {
             autoComplete="name"
             required
             minLength={2}
+            value={draft.name}
+            onChange={(event) => updateDraft("name", event.target.value)}
             className={fieldClass}
           />
         </label>
@@ -66,6 +126,8 @@ export function ContactForm() {
             type="email"
             autoComplete="email"
             required
+            value={draft.email}
+            onChange={(event) => updateDraft("email", event.target.value)}
             className={fieldClass}
           />
         </label>
@@ -75,6 +137,8 @@ export function ContactForm() {
             name="phone"
             type="tel"
             autoComplete="tel"
+            value={draft.phone}
+            onChange={(event) => updateDraft("phone", event.target.value)}
             className={fieldClass}
           />
         </label>
@@ -85,9 +149,48 @@ export function ContactForm() {
             autoComplete="organization"
             required
             minLength={2}
+            value={draft.businessName}
+            onChange={(event) => updateDraft("businessName", event.target.value)}
             className={fieldClass}
           />
         </label>
+      </div>
+      <div className="mt-6">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div className="min-w-0">
+            <p className="text-sm font-semibold">Which plans interest you?</p>
+          </div>
+          <Button
+            href="/pricing"
+            variant="quiet"
+            onClick={persistDraft}
+            className="w-full shrink-0 sm:w-auto"
+          >
+            See Pricing
+          </Button>
+        </div>
+        <div className="mt-5 grid gap-5 sm:grid-cols-2">
+          <PlanSelect
+            name="websiteTier"
+            label="Website build tier"
+            value={draft.websiteTier}
+            required
+            placeholder="Choose a website tier"
+            options={websitePlanOptions}
+            disabled={pending}
+            onChange={(value) => updateDraft("websiteTier", value)}
+          />
+          <PlanSelect
+            name="seoTier"
+            label="SEO tier"
+            hint="(optional)"
+            value={draft.seoTier}
+            placeholder="Choose an SEO tier"
+            options={seoPlanOptions}
+            disabled={pending}
+            onChange={(value) => updateDraft("seoTier", value)}
+          />
+        </div>
       </div>
       <label className="mt-5 block min-w-0 text-sm font-medium">
         What do you need?
@@ -96,14 +199,23 @@ export function ContactForm() {
           required
           minLength={12}
           rows={6}
+          value={draft.message}
+          onChange={(event) => updateDraft("message", event.target.value)}
           className={fieldClass}
-          placeholder="Tell me what you sell, what the current site is missing, and what a win looks like."
+          placeholder="Provide a short description of your business."
         />
       </label>
-      <div className="hidden" aria-hidden="true">
+      <div
+        className="pointer-events-none absolute -left-[9999px] h-0 w-0 overflow-hidden"
+        aria-hidden="true"
+      >
         <label>
           Company website
-          <input name="company_website" tabIndex={-1} autoComplete="off" />
+          <input
+            name="company_website"
+            tabIndex={-1}
+            autoComplete="off"
+          />
         </label>
       </div>
       {state.status === "error" ? (

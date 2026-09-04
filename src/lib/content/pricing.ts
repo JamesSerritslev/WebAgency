@@ -144,7 +144,7 @@ export const seoTiers: PricingTier[] = [
     includes: [
       "Full keyword tracking across all clusters, with ongoing expansion as new terms emerge",
       "Complete review and reputation management across all platforms",
-      "Google Reviews website integration on key pages: review carousel, write-a-review prompts, and schema that stays current as new reviews land",
+      "Google Reviews website integration on key pages: review section, write-a-review prompts, and schema that stays current as new reviews land",
       "Google Business Profile and local citation management across directories",
       "Weekly or bi-weekly reporting with a full analytics dashboard",
       "Content: dedicated landing pages, seasonal campaigns, and a blog cadence of 4 or more posts per month",

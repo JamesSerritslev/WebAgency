@@ -8,6 +8,7 @@ import {
   inquiryEmailHtml,
   inquiryEmailText,
 } from "@/lib/emails";
+import { isSeoPlan, isWebsitePlan } from "@/lib/content/plans";
 
 export type ContactState = {
   status: "idle" | "success" | "error";
@@ -32,6 +33,8 @@ export async function submitContact(
   const email = String(formData.get("email") ?? "").trim();
   const phone = String(formData.get("phone") ?? "").trim();
   const businessName = String(formData.get("businessName") ?? "").trim();
+  const websiteTier = String(formData.get("websiteTier") ?? "").trim();
+  const seoTier = String(formData.get("seoTier") ?? "").trim();
   const message = String(formData.get("message") ?? "").trim();
 
   if (name.length < 2) {
@@ -42,6 +45,15 @@ export async function submitContact(
   }
   if (businessName.length < 2) {
     return { status: "error", message: "Please add your business name." };
+  }
+  if (!isWebsitePlan(websiteTier)) {
+    return {
+      status: "error",
+      message: "Please pick a website build tier. None is fine if you only want SEO.",
+    };
+  }
+  if (seoTier && !isSeoPlan(seoTier)) {
+    return { status: "error", message: "Please pick a valid SEO tier, or leave it blank." };
   }
   if (message.length < 12) {
     return {
@@ -70,8 +82,24 @@ export async function submitContact(
     to,
     replyTo: email,
     subject: `New project inquiry from ${businessName}`,
-    text: inquiryEmailText({ name, email, phone, businessName, message }),
-    html: inquiryEmailHtml({ name, email, phone, businessName, message }),
+    text: inquiryEmailText({
+      name,
+      email,
+      phone,
+      businessName,
+      websiteTier,
+      seoTier,
+      message,
+    }),
+    html: inquiryEmailHtml({
+      name,
+      email,
+      phone,
+      businessName,
+      websiteTier,
+      seoTier,
+      message,
+    }),
   });
 
   if (notify.error) {

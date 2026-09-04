@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props) {
   const project = getProject(slug);
   if (!project) return {};
   return pageMetadata({
-    title: `${project.title} website case study`,
+    title: `${project.title} case study`,
     description: project.metaDescription,
     path: `/work/${project.slug}`,
     keywords: [...project.keywords],
@@ -77,11 +77,28 @@ export default async function ProjectPage({ params }: Props) {
         <Button href={project.url} variant="secondary" className="w-full sm:w-auto">
           Visit the live site
         </Button>
+        {project.inquireEmail ? (
+          <Button
+            href={`mailto:${project.inquireEmail}`}
+            className="w-full sm:w-auto"
+          >
+            Email me directly
+          </Button>
+        ) : null}
         <Link href="/work" className="self-center text-sm font-semibold text-cobalt">
           Back to all work
         </Link>
       </div>
-      <CtaBand />
+      {project.inquireEmail ? (
+        <CtaBand
+          title="Interested in a big custom web app?"
+          body={`This kind of build is quoted separately from the published tiers. Email me directly at ${project.inquireEmail}.`}
+          href={`mailto:${project.inquireEmail}`}
+          buttonLabel="Email me directly"
+        />
+      ) : (
+        <CtaBand />
+      )}
     </main>
   );
 }

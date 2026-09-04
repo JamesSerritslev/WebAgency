@@ -52,7 +52,7 @@ export function Logo({
           width={671}
           height={298}
           priority={isHeader}
-          className={`w-auto max-w-[38vw] sm:max-w-none transition-[height] duration-300 ease-out motion-reduce:transition-none ${scale.image}`}
+          className={`w-auto max-w-[38vw] sm:max-w-none transition-[height] duration-300 ease-out motion-reduce:transition-none ${scale.image} ${isHeader ? "origin-center scale-[1.1]" : ""}`}
         />
         <span
           className={`pb-1 font-sans font-semibold uppercase transition-[font-size,letter-spacing] duration-300 ease-out motion-reduce:transition-none md:pb-1.5 ${isHeader ? "hidden xl:inline" : ""} ${scale.suffix} ${suffixColor}`}

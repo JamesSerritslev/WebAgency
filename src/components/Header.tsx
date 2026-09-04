@@ -52,21 +52,30 @@ export function Header() {
         </nav>
         <button
           type="button"
-          className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-ink/15 lg:hidden"
+          className={`menu-toggle inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border lg:hidden ${
+            open ? "is-open" : ""
+          }`}
           aria-expanded={open}
+          aria-controls="mobile-nav"
           aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen((value) => !value)}
         >
           <span className="sr-only">Menu</span>
-          <span className="flex flex-col gap-1.5">
-            <span className="block h-0.5 w-5 bg-ink" />
-            <span className="block h-0.5 w-5 bg-ink" />
+          <span className="menu-toggle-bars" aria-hidden="true">
+            <span className="menu-toggle-bar" />
+            <span className="menu-toggle-bar" />
+            <span className="menu-toggle-bar" />
           </span>
         </button>
       </div>
-      {open ? (
-        <nav className="border-t border-ink/8 px-5 py-4 lg:hidden">
-          <ul className="flex flex-col gap-3 text-base font-medium">
+      <nav
+        id="mobile-nav"
+        className={`mobile-nav lg:hidden ${open ? "is-open" : ""}`}
+        aria-hidden={!open}
+        inert={!open || undefined}
+      >
+        <div className="mobile-nav-inner">
+          <ul className="flex flex-col gap-3 px-5 py-4 text-base font-medium">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link href={link.href} onClick={() => setOpen(false)}>
@@ -80,8 +89,8 @@ export function Header() {
               </Button>
             </li>
           </ul>
-        </nav>
-      ) : null}
+        </div>
+      </nav>
     </header>
   );
 }

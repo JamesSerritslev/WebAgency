@@ -44,6 +44,8 @@ Small local businesses: restaurants, bars, wineries, cafes, online stores, plumb
 | `/work` | Selected work |
 | `/work/analogue-room` | Vinyl bar case study |
 | `/work/standing-sun-wines` | Winery case study |
+| `/work/james-serritslev` | Personal portfolio case study |
+| `/work/bandscope` | Music networking app case study |
 | `/insights` | Articles hub |
 | `/insights/[slug]` | Seed SEO articles |
 | `/faq` | FAQ with FAQPage schema |
@@ -110,3 +112,5 @@ Homepage captures of live sites live in `public/work/`:
 
 - Analogue Room: https://www.analogueroom.com
 - Standing Sun Wines: https://www.standingsunwines.com
+- James Serritslev resume: https://www.jamesserritslev.com
+- BandScope: https://www.bandscope.net

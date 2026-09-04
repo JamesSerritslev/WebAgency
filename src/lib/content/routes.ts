@@ -10,6 +10,8 @@ export const routes = [
   "/work",
   "/work/analogue-room",
   "/work/standing-sun-wines",
+  "/work/james-serritslev",
+  "/work/bandscope",
   "/insights",
   "/insights/custom-website-vs-wordpress-for-local-businesses",
   "/insights/local-seo-for-small-shops",

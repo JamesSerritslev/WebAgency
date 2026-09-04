@@ -5,7 +5,7 @@ type ButtonProps = {
   children: ReactNode;
   href?: string;
   type?: "button" | "submit";
-  variant?: "primary" | "secondary" | "ghost";
+  variant?: "primary" | "secondary" | "ghost" | "quiet";
   loading?: boolean;
   className?: string;
   onClick?: () => void;
@@ -15,6 +15,7 @@ const variants = {
   primary: "border-amber bg-amber text-white hover:border-amber-deep hover:bg-amber-deep",
   secondary: "border-ink bg-transparent text-ink hover:bg-ink hover:text-white",
   ghost: "border-white/35 bg-transparent text-white hover:border-amber hover:bg-amber",
+  quiet: "btn-quiet border-ink/20 bg-transparent text-ink",
 } as const;
 
 export function Button({
@@ -41,15 +42,17 @@ export function Button({
   );
 
   if (href) {
-    const isExternal = href.startsWith("http");
+      const isMailto = href.startsWith("mailto:");
+    const isExternal = href.startsWith("http") || isMailto;
 
     if (isExternal) {
       return (
         <a
           href={href}
           className={classes}
-          target="_blank"
-          rel="noopener noreferrer"
+          {...(isMailto
+            ? {}
+            : { target: "_blank", rel: "noopener noreferrer" })}
           onClick={onClick}
         >
           {inner}

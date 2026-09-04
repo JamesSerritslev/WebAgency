@@ -53,9 +53,13 @@ export function PageHero({
 export function CtaBand({
   title = "Tell me what you need",
   body = "Share your business, your site problems, and what you want customers to do. It comes straight to me, and you get a reply with next steps.",
+  href = "/contact",
+  buttonLabel = "Start a project",
 }: {
   title?: string;
   body?: string;
+  href?: string;
+  buttonLabel?: string;
 }) {
   return (
     <section className="bg-ink text-chalk">
@@ -64,8 +68,8 @@ export function CtaBand({
           <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl">{title}</h2>
           <p className="mt-3 text-chalk/75">{body}</p>
         </div>
-        <Button href="/contact" variant="primary" className="w-full shrink-0 sm:w-auto">
-          Start a project
+        <Button href={href} variant="primary" className="w-full shrink-0 sm:w-auto">
+          {buttonLabel}
         </Button>
       </div>
     </section>

@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { Button } from "@/components/Button";
 import { JsonLd } from "@/components/JsonLd";
 import { CtaBand } from "@/components/PageHero";
+import { PricingCta } from "@/components/PricingCta";
+import { seoTierValue, websiteTierValue } from "@/lib/content/plans";
 import { buildNotes, buildTiers, personalTier, seoTiers, type PricingTier } from "@/lib/content/pricing";
 import { breadcrumbSchema, offerCatalogSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
@@ -20,8 +21,15 @@ export const metadata = pageMetadata({
   ],
 });
 
-function TierCard({ tier }: { tier: PricingTier }) {
+function TierCard({
+  tier,
+  kind,
+}: {
+  tier: PricingTier;
+  kind: "website" | "seo";
+}) {
   const featured = Boolean(tier.featured);
+  const slug = kind === "website" ? websiteTierValue(tier.name) : seoTierValue(tier.name);
 
   return (
     <article
@@ -58,23 +66,33 @@ function TierCard({ tier }: { tier: PricingTier }) {
         ))}
       </ol>
       <div className="mt-8">
-        <Button
-          href="/contact"
+        <PricingCta
+          kind={kind}
+          slug={slug}
+          name={tier.name}
           variant={featured ? "primary" : "secondary"}
-          className="w-full"
-        >
-          Start with {tier.name}
-        </Button>
+        />
       </div>
     </article>
   );
 }
 
-function TierGrid({ tiers }: { tiers: PricingTier[] }) {
+function TierGrid({
+  tiers,
+  kind,
+  id,
+}: {
+  tiers: PricingTier[];
+  kind: "website" | "seo";
+  id?: string;
+}) {
   return (
-    <div className="mt-10 grid items-stretch gap-6 lg:grid-cols-3">
+    <div
+      id={id}
+      className={`mt-10 grid items-stretch gap-6 lg:grid-cols-3 ${id ? "scroll-mt-28" : ""}`}
+    >
       {tiers.map((tier) => (
-        <TierCard key={tier.name} tier={tier} />
+        <TierCard key={tier.name} tier={tier} kind={kind} />
       ))}
     </div>
   );
@@ -108,7 +126,7 @@ export default function PricingPage() {
           className="absolute inset-y-0 right-0 hidden w-1/4 bg-amber lg:block"
           aria-hidden="true"
         />
-        <div className="relative mx-auto max-w-6xl px-5 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
+        <div className="relative mx-auto max-w-6xl px-5 pt-12 pb-14 sm:px-6 sm:pt-16 sm:pb-18 lg:px-8 lg:pt-24 lg:pb-35">
           <nav aria-label="Breadcrumb" className="mb-8 text-sm text-chalk/55">
             <ol className="flex flex-wrap items-center gap-2">
               <li>
@@ -136,20 +154,26 @@ export default function PricingPage() {
             after a short call.
           </p>
           <div className="mt-10 grid max-w-xl gap-4 sm:grid-cols-2">
-            <div className="rounded-2xl bg-ink-soft p-5">
+            <Link
+              href="#website-build"
+              className="rounded-2xl bg-ink-soft p-5 transition hover:bg-ink-soft/80"
+            >
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber">
                 Website
               </p>
               <p className="mt-2 font-display text-3xl">$700</p>
               <p className="mt-1 text-sm text-chalk/60">one-time</p>
-            </div>
-            <div className="rounded-2xl bg-ink-soft p-5">
+            </Link>
+            <Link
+              href="#seo"
+              className="rounded-2xl bg-ink-soft p-5 transition hover:bg-ink-soft/80"
+            >
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber">
                 SEO
               </p>
               <p className="mt-2 font-display text-3xl">$750</p>
               <p className="mt-1 text-sm text-chalk/60">per month</p>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
@@ -186,13 +210,16 @@ export default function PricingPage() {
               one-time project · {personalTier.timeline}
             </p>
             <div className="mt-5 lg:flex lg:justify-end">
-              <Button href="/contact" variant="secondary" className="w-full sm:w-auto">
-                Start with {personalTier.name}
-              </Button>
+              <PricingCta
+                kind="website"
+                slug={websiteTierValue(personalTier.name)}
+                name={personalTier.name}
+                className="w-full sm:w-auto"
+              />
             </div>
           </div>
         </article>
-        <TierGrid tiers={buildTiers} />
+        <TierGrid id="website-build" tiers={buildTiers} kind="website" />
       </section>
 
       <section className="border-y border-ink/8 bg-paper">
@@ -208,7 +235,10 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+      <section
+        id="seo"
+        className="mx-auto max-w-6xl scroll-mt-28 px-5 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
+      >
         <p className="text-sm font-semibold uppercase tracking-[0.16em] text-amber">
           SEO
         </p>
@@ -221,7 +251,7 @@ export default function PricingPage() {
           tier. Growth and Full-Scale include Google Reviews on the website.
           You can add SEO at launch or later.
         </p>
-        <TierGrid tiers={seoTiers} />
+        <TierGrid tiers={seoTiers} kind="seo" />
       </section>
 
       <CtaBand title="Not sure which tier fits?" />

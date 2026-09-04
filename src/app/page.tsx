@@ -1,17 +1,17 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/Button";
 import { ContactForm } from "@/components/ContactForm";
+import { WorkCard } from "@/components/WorkCard";
 import { BRAND_FULL, OWNER_FIRST_NAME } from "@/lib/brand";
 import { homepageFaqs } from "@/lib/content/faq";
 import { services } from "@/lib/content/services";
-import { projects } from "@/lib/content/work";
+import { selectedProjects } from "@/lib/content/work";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   title: "Custom websites, SEO, and AI visibility",
   description:
-    "Hey, I am James Serritslev. I build custom sites for restaurants, trades, shops, online stores, resumes, and pretty much anything you can think of. One person, start to finish. My SEO work helps people find you when they search.",
+    "Hey, I am James Serritslev. I build custom sites for restaurants, trades, shops, online stores, resumes, and pretty much anything you can think of. My SEO work helps people find you when they search.",
   path: "/",
   keywords: [
     "custom website design",
@@ -40,10 +40,10 @@ export default function HomePage() {
             <p className="mt-5 max-w-xl text-base leading-relaxed text-chalk/75 sm:mt-6 sm:text-lg">
               Hey, I am {OWNER_FIRST_NAME}, and I build custom sites for
               restaurants, trades, shops, online stores, resumes, and pretty
-              much anything you can think of. One person, start to finish. No
-              corporate waiting to approve. It is simple and straightforward.
-              My SEO (search engine optimization) work helps people find you
-              when they search for your business or related searches.
+              much anything you can think of. No corporate waiting to approve.
+              It is simple and straightforward. My SEO (search engine
+              optimization) work helps people find you when they search for
+              your business or related searches.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Button href="/contact" className="w-full sm:w-auto">
@@ -122,26 +122,9 @@ export default function HomePage() {
               </Button>
             </div>
           </div>
-          <div className="mt-10 grid gap-8 sm:grid-cols-2">
-            {projects.map((project) => (
-              <Link key={project.slug} href={`/work/${project.slug}`} className="group min-w-0">
-                <div className="overflow-hidden rounded-3xl border border-ink/10 bg-paper">
-                  <Image
-                    src={project.image}
-                    alt={project.imageAlt}
-                    width={1440}
-                    height={900}
-                    className="h-52 w-full object-cover object-top transition duration-500 group-hover:scale-[1.03] sm:h-64 lg:h-80"
-                  />
-                  <div className="p-6">
-                    <p className="text-sm text-slate">{project.category}</p>
-                    <h3 className="mt-1 font-display text-2xl">{project.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-slate">
-                      {project.summary}
-                    </p>
-                  </div>
-                </div>
-              </Link>
+          <div className="mt-10 grid items-stretch gap-8 md:grid-cols-3">
+            {selectedProjects.map((project) => (
+              <WorkCard key={project.slug} project={project} />
             ))}
           </div>
           <div className="mt-8 lg:hidden">
@@ -203,8 +186,9 @@ export default function HomePage() {
               Tell me about the business.
             </h2>
             <p className="mt-4 leading-relaxed text-slate">
-              Name, email, business, and what you need. The note comes straight
-              to my inbox, and you get a confirmation.
+              Name, email, business, the website tier you want, and what you
+              need. The note comes straight to my inbox, and you get a
+              confirmation.
             </p>
           </div>
           <ContactForm />

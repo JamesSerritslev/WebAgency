@@ -9,23 +9,24 @@ import { pageMetadata } from "@/lib/seo";
 
 const extra: Record<string, string[]> = {
   "custom-websites": [
-    "I write a custom website for one business. That means the homepage can lead with this week's hours, the services you actually offer, or the products you have in stock, instead of a generic hero slider.",
-    "Performance is part of how I design. I size images, keep scripts lean, and work on Core Web Vitals before launch. Fast pages help rankings and they help a customer on cellular data.",
-    "I build the SEO foundation in. I plan each URL, each H1 names the offer, and schema tells search systems what kind of local business you are. Internal links connect services, work, FAQs, and contact.",
-    "You own the code. When you want a new service page or a product filter, it is built into the system, not jammed in as another plugin.",
+    "With a custom website, the design has no limits. The build can recreate what you imagine. Examples can serve as inspiration, or an original idea can be built from scratch.",
+    "Custom sites are extremely fast compared to WordPress or similar builders. Customers landing on a page do not want to wait for it to load. A fast site, even on cellular data, is how you keep customers.",
+    "The build includes an SEO foundation so search engines can parse your pages.",
+    "Every page is readable and easy to follow. Moving from one page to the next is simple, so customers are not left confused or frustrated.",
+    "Editing is a breeze. The site connects to software where updates can be made when needed.",
+    "When the site is finished, you own the code. Changes can be requested anytime.",
   ],
   seo: [
-    "The website launches with an SEO foundation. Rankings that keep moving take continued work: new queries, cleaner titles, better internal links, and pages that match how people search this month, not last year.",
+    "The website launches with an SEO foundation. Rankings that keep moving take continued work: website and market analysis, gathering reviews and references, and overall alignment across citations. This continuous work is how businesses dominate with digital presence.",
     "Keyword research for a local business is specific. People look for a plumber nearby, a contractor for a remodel, a restaurant for tonight, or a store that ships. I map those phrases to real URLs instead of stuffing them into one homepage.",
     "Local citations and backlinks still matter. Name, address, and hours should match across directories. I chase mentions from local press, partners, and events because they send both people and ranking signals.",
-    "Growth and Full-Scale SEO put Google Reviews on the website. Visitors see a rating and recent reviews before they call, and search systems get review schema that matches what people actually wrote. Full-Scale adds a review carousel on key pages and write-a-review prompts so new reviews keep coming.",
-    "Heavy analysis means looking at what already ranks, where you leak, and which pages deserve the next write. I do that every month, and you get a real read on it instead of a 40-page PDF that never gets opened again.",
+    "Growth and Full-Scale SEO put Google Reviews on the website. Visitors see a rating and recent reviews before they call, and search systems get review schema that matches what people actually wrote. Full-Scale adds a review section on key pages and write-a-review prompts so new reviews keep coming.",
+    "Heavy analysis means looking at what already ranks, where you leak, and which pages deserve the next write. I do that every month, as well as an in-depth report of how your site is performing.",
   ],
   "ai-visibility": [
-    "AI tools answer with sources they can parse. If your site is a blur of template copy, they guess. If your site states who you are, what you sell, where you operate, and how to visit or book, they can cite you.",
-    "I set up FAQ structure, service pages with clear claims, and schema that names the business type. I also keep your facts consistent so the model is not choosing between three different hour listings.",
-    "AI visibility sits on SEO. You still need crawlable pages, backlinks, and local trust. The extra layer is writing like a source: short answers to real questions, current details, and entity-clear copy.",
-    "This is useful for a restaurant that wants to be recommended for a neighborhood, a contractor that wants to be named for a trade, or a store that wants products to show up in answers.",
+    "AI tools answer with sources they can parse. What AI tools parse is not well known today by most SEO specialists because it is so new. I have spent time diving into the new strategies to get your business mentioned by AI.",
+    "AI visibility sits on SEO. You still need crawlable pages, backlinks, and local trust. Two extra layers sit on top of that. The first is writing like a source: short answers to real questions related to your field of business. The second is keeping Yelp, TripAdvisor, Reddit, etc. aligned and collecting reviews so AI systems can recognize the business.",
+    "AI visibility is extremely valuable for any type of business today.",
   ],
 };
 

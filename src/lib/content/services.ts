@@ -7,7 +7,7 @@ export const services = [
     summary:
       "Fully custom-built sites for local businesses. Unique to your brand, built to be found.",
     description:
-      "Custom website design and development for local businesses that need a fast, unique site built to be found in search.",
+      "Quality custom-coded websites that will outperform cheap templatized websites when it comes to security, speed, and visibility.",
     metaDescription:
       "Custom website design for local businesses: restaurants, trades, shops, and stores. Hand-built sites with no WordPress, fast load times, and SEO that helps customers find you.",
     keywords: [
@@ -33,7 +33,7 @@ export const services = [
     summary:
       "SEO work that helps people find you: keyword research, citations, backlinks, technical checks, and content.",
     description:
-      "SEO for custom-built sites, covering keyword research, local citations, backlinks, technical analysis, and on-page work so customers can find you in search.",
+      "SEO (Search Engine Optimization) helps your website show up on Google closer to the top of the results, or even in AI Overviews. This is a tactic proven effective for bringing more traffic and sales to your business.",
     metaDescription:
       "Local SEO for small businesses. Keyword research, citations, backlinks, technical SEO, and reporting that help people find your business when they search.",
     keywords: [
@@ -46,11 +46,12 @@ export const services = [
       "keyword research",
     ],
     outcomes: [
-      "Keyword map tied to how customers actually search",
-      "Local citations that match your name, address, and hours",
-      "Google Reviews on the website for Growth and Full-Scale SEO",
-      "Backlinks from relevant local and industry sites",
-      "Monthly analysis instead of a forgotten audit PDF",
+      "Your site and Google Business Profile ahead of other businesses",
+      "Press and directory citations that build trust and authority",
+      "More reviews coming in",
+      "Pages mapped to the searches customers actually type",
+      "More traffic, calls, and sales from search",
+      "A monthly report on how the site is performing",
     ],
   },
   {
@@ -61,7 +62,7 @@ export const services = [
     summary:
       "Make your business easy for ChatGPT, AI Overviews, and answer engines to recommend with accurate facts.",
     description:
-      "AI visibility work so local businesses show up when people ask AI tools who to visit, book, or buy from.",
+      "AI changed the game of SEO, and many businesses are not taking advantage of this. Ranking on AI Overviews obtains almost all of the traffic in modern searches.",
     metaDescription:
       "AI visibility for local businesses. Schema, entity-clear content, and structure so ChatGPT and Google AI Overviews can cite restaurants, trades, shops, and service companies.",
     keywords: [
@@ -72,10 +73,10 @@ export const services = [
       "schema markup for local business",
     ],
     outcomes: [
-      "Schema and entity data search systems can parse",
-      "Clear answers to the questions buyers ask AI tools",
-      "Consistent facts across the site, maps, and citations",
+      "Consistent facts across the site and citations",
+      "Clear answers to questions buyers ask AI tools",
       "A content layer built for both classic SEO and AI results",
+      "Your business mentioned by AI tools and Overviews",
     ],
   },
 ] as const;
