@@ -1,7 +1,6 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { ImageResponse } from "next/og";
-import { BRAND_FULL, BRAND_NAME, BRAND_SUFFIX } from "@/lib/brand";
 
 export const ogSize = {
   width: 1200,
@@ -16,10 +15,34 @@ type OgInput = {
   eyebrow?: string;
 };
 
-export async function createOgImage({ title, description, eyebrow }: OgInput) {
-  const logoData = await readFile(
-    join(process.cwd(), "public/brand/cor-logo-dark.png"),
-  );
+async function loadFraunces() {
+  const css = await fetch(
+    "https://fonts.googleapis.com/css2?family=Fraunces:wght@500&text=Create.Optimize.Rank",
+    {
+      headers: {
+        "User-Agent":
+          "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_8; de-at) AppleWebKit/533.21.1 (KHTML, like Gecko) Version/5.0.5 Safari/533.21.1",
+      },
+    },
+  ).then((response) => response.text());
+
+  const match = css.match(/src: url\(([^)]+)\) format\('(opentype|truetype)'\)/);
+  if (!match?.[1]) return undefined;
+
+  const data = await fetch(match[1]).then((response) => response.arrayBuffer());
+  return {
+    name: "Fraunces",
+    data,
+    style: "normal" as const,
+    weight: 500 as const,
+  };
+}
+
+export async function createOgImage(_input: OgInput) {
+  const [logoData, font] = await Promise.all([
+    readFile(join(process.cwd(), "public/brand/cor-logo.png")),
+    loadFraunces().catch(() => undefined),
+  ]);
   const logoSrc = `data:image/png;base64,${logoData.toString("base64")}`;
 
   return new ImageResponse(
@@ -29,77 +52,49 @@ export async function createOgImage({ title, description, eyebrow }: OgInput) {
           width: "100%",
           height: "100%",
           display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          background: "#0F172A",
-          padding: "72px",
+          alignItems: "center",
+          justifyContent: "center",
+          background: "#F7F5F2",
         }}
       >
         <div
           style={{
             display: "flex",
-            alignItems: "flex-end",
-            gap: 20,
+            flexDirection: "column",
+            alignItems: "center",
           }}
         >
           <img
             src={logoSrc}
             alt=""
-            width={198}
-            height={88}
+            width={480}
+            height={213}
             style={{ objectFit: "contain" }}
           />
           <div
             style={{
-              color: "#CBD5E1",
-              fontSize: 22,
-              fontWeight: 600,
-              letterSpacing: 6,
-              paddingBottom: 10,
-              textTransform: "uppercase",
+              display: "flex",
+              alignItems: "baseline",
+              marginTop: 28,
+              color: "#0F172A",
+              fontFamily: font ? "Fraunces" : "serif",
+              fontSize: 36,
+              letterSpacing: 0.5,
             }}
           >
-            {BRAND_SUFFIX}
+            <span style={{ display: "flex" }}>Create</span>
+            <span style={{ display: "flex", color: "#EA580C" }}>.</span>
+            <span style={{ display: "flex", marginLeft: 16 }}>Optimize</span>
+            <span style={{ display: "flex", color: "#EA580C" }}>.</span>
+            <span style={{ display: "flex", marginLeft: 16 }}>Rank</span>
+            <span style={{ display: "flex", color: "#EA580C" }}>.</span>
           </div>
         </div>
-        <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-          <div
-            style={{
-              color: "#EA580C",
-              fontSize: 24,
-              letterSpacing: 2,
-              textTransform: "uppercase",
-            }}
-          >
-            {eyebrow ?? BRAND_NAME}
-          </div>
-          <div
-            style={{
-              color: "#F7F5F2",
-              fontSize: title.length > 42 ? 52 : 64,
-              fontWeight: 700,
-              lineHeight: 1.1,
-              maxWidth: 980,
-            }}
-          >
-            {title}
-          </div>
-          {description ? (
-            <div
-              style={{
-                color: "#CBD5E1",
-                fontSize: 28,
-                lineHeight: 1.35,
-                maxWidth: 860,
-              }}
-            >
-              {description}
-            </div>
-          ) : null}
-        </div>
-        <div style={{ color: "#94A3B8", fontSize: 22 }}>{BRAND_FULL}</div>
       </div>
     ),
-    ogSize,
+    {
+      ...ogSize,
+      fonts: font ? [font] : [],
+    },
   );
 }
