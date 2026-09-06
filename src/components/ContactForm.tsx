@@ -166,7 +166,7 @@ export function ContactForm() {
             onClick={persistDraft}
             className="w-full shrink-0 sm:w-auto"
           >
-            See Pricing
+            See Plans & Pricing
           </Button>
         </div>
         <div className="mt-5 grid gap-5 sm:grid-cols-2">

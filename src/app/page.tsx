@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/Button";
 import { ContactForm } from "@/components/ContactForm";
 import { WorkCard } from "@/components/WorkCard";
-import { BRAND_FULL, OWNER_FIRST_NAME } from "@/lib/brand";
+import { BRAND_FULL } from "@/lib/brand";
 import { homepageFaqs } from "@/lib/content/faq";
 import { services } from "@/lib/content/services";
 import { selectedProjects } from "@/lib/content/work";
@@ -38,9 +38,8 @@ export default function HomePage() {
               Custom websites for local businesses that want to be found.
             </h1>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-chalk/75 sm:mt-6 sm:text-lg">
-              Hey, I am {OWNER_FIRST_NAME}, and I build custom sites for
-              restaurants, trades, shops, online stores, resumes, and pretty
-              much anything you can think of. No corporate waiting to approve.
+              Custom sites for restaurants, trades, shops, online stores,
+              resumes, and pretty much anything you can think of. No corporate waiting to approve.
               It is simple and straightforward. My SEO (search engine
               optimization) work helps people find you when they search for
               your business or related searches.
