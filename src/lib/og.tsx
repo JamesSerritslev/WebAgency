@@ -1,5 +1,7 @@
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
-import { BRAND_FULL, BRAND_NAME } from "@/lib/brand";
+import { BRAND_FULL, BRAND_NAME, BRAND_SUFFIX } from "@/lib/brand";
 
 export const ogSize = {
   width: 1200,
@@ -14,7 +16,12 @@ type OgInput = {
   eyebrow?: string;
 };
 
-export function createOgImage({ title, description, eyebrow }: OgInput) {
+export async function createOgImage({ title, description, eyebrow }: OgInput) {
+  const logoData = await readFile(
+    join(process.cwd(), "public/brand/cor-logo-dark.png"),
+  );
+  const logoSrc = `data:image/png;base64,${logoData.toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -31,12 +38,30 @@ export function createOgImage({ title, description, eyebrow }: OgInput) {
         <div
           style={{
             display: "flex",
-            height: 8,
-            width: 168,
-            background: "#EA580C",
-            borderRadius: 99,
+            alignItems: "flex-end",
+            gap: 20,
           }}
-        />
+        >
+          <img
+            src={logoSrc}
+            alt=""
+            width={198}
+            height={88}
+            style={{ objectFit: "contain" }}
+          />
+          <div
+            style={{
+              color: "#CBD5E1",
+              fontSize: 22,
+              fontWeight: 600,
+              letterSpacing: 6,
+              paddingBottom: 10,
+              textTransform: "uppercase",
+            }}
+          >
+            {BRAND_SUFFIX}
+          </div>
+        </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
           <div
             style={{
