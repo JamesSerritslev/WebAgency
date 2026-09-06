@@ -240,7 +240,8 @@ html.intro-done .intro-splash {
   transform: translateY(-100%);
 }
 
-.intro-video {
+.intro-video,
+.intro-logo {
   pointer-events: none;
   transform: translateY(-7vh);
 }
