@@ -27,7 +27,7 @@ export function Footer() {
           <ul className="mt-4 grid grid-cols-1 gap-x-6 gap-y-2 text-sm min-[380px]:grid-cols-2">
             {footerLinks.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className="hover:text-amber">
+                <Link href={link.href} scroll={false} className="hover:text-amber">
                   {link.label}
                 </Link>
               </li>

@@ -3,8 +3,8 @@ import { Archivo_Black, Fraunces, Instrument_Sans } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { Header } from "@/components/Header";
-import { IntroSplash } from "@/components/IntroSplash";
 import { JsonLd } from "@/components/JsonLd";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import { BRAND_FULL, BRAND_NAME, TAGLINE } from "@/lib/brand";
 import { organizationSchema, websiteSchema } from "@/lib/schema";
 import { getSiteUrl } from "@/lib/site";
@@ -78,14 +78,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${instrument.variable} ${fraunces.variable} ${archivoBlack.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-chalk font-sans text-ink">
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `try{if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('intro-done')}}catch(e){}`,
-          }}
-        />
         <JsonLd data={organizationSchema()} />
         <JsonLd data={websiteSchema()} />
-        <IntroSplash />
+        <ScrollToTop />
         <Header />
         <div className="flex flex-1 flex-col">{children}</div>
         <Footer />

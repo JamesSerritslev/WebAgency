@@ -1,3 +1,19 @@
+export const NAV_SHRINK_AFTER = 24;
+export const NAV_EXPAND_BELOW = 4;
+export const PAGE_TOP_SCROLL = 48;
+
+let appPath: string | null = null;
+
+export function trackAppPath(pathname: string) {
+  if (appPath === null) {
+    appPath = pathname;
+    return "initial" as const;
+  }
+  if (appPath === pathname) return "same" as const;
+  appPath = pathname;
+  return "changed" as const;
+}
+
 export const navLinks = [
   { href: "/work", label: "Work" },
   { href: "/services", label: "Services" },

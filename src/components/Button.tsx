@@ -61,7 +61,7 @@ export function Button({
     }
 
     return (
-      <Link href={href} className={classes} onClick={onClick}>
+      <Link href={href} scroll={false} className={classes} onClick={onClick}>
         {inner}
       </Link>
     );

@@ -1,11 +1,19 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { BRAND_FULL, BRAND_NAME, BRAND_SUFFIX } from "@/lib/brand";
+
+let navTaglineHasPlayed = false;
 
 type LogoProps = {
   size?: "header" | "headerCompact" | "footer";
   theme?: "light" | "dark";
   showTagline?: boolean;
+  showNavTagline?: boolean;
+  navTaglineVisible?: boolean;
+  showMobileSuffix?: boolean;
   asLink?: boolean;
   className?: string;
 };
@@ -31,10 +39,56 @@ const sizes = {
   },
 } as const;
 
+export function NavTagline({
+  className = "",
+  visible = true,
+}: {
+  className?: string;
+  visible?: boolean;
+}) {
+  const [canStagger] = useState(() => {
+    if (navTaglineHasPlayed) return false;
+    navTaglineHasPlayed = true;
+    return true;
+  });
+  const [staggerUsed, setStaggerUsed] = useState(false);
+
+  useEffect(() => {
+    if (!visible) {
+      setStaggerUsed(true);
+    }
+  }, [visible]);
+
+  const mode = !visible
+    ? "is-out"
+    : canStagger && !staggerUsed
+      ? "nav-tagline--in"
+      : "nav-tagline--ready";
+
+  return (
+    <span
+      className={`nav-tagline ${mode} flex font-display text-[0.68rem] leading-none text-ink sm:text-[0.85rem] ${className}`.trim()}
+    >
+      <span className="nav-word">
+        Create<span className="text-amber">.</span>
+      </span>
+      <span className="nav-word">
+        Optimize<span className="text-amber">.</span>
+      </span>
+      <span className="nav-word">
+        Rank<span className="text-amber">.</span>
+      </span>
+    </span>
+  );
+}
+
 export function Logo({
   size = "header",
   theme = "light",
   showTagline = false,
+  showNavTagline = false,
+  navTaglineVisible = true,
+  showMobileSuffix = false,
   asLink = true,
   className = "",
 }: LogoProps) {
@@ -60,6 +114,21 @@ export function Logo({
           {BRAND_SUFFIX}
         </span>
       </span>
+      {isHeader ? (
+        <span
+          className={`nav-suffix font-sans font-semibold uppercase lg:hidden ${
+            showMobileSuffix ? "is-in" : "is-out"
+          } ${scale.suffix} ${suffixColor}`}
+        >
+          <span>{BRAND_SUFFIX}</span>
+        </span>
+      ) : null}
+      {showNavTagline ? (
+        <NavTagline
+          visible={navTaglineVisible}
+          className="nav-tagline--below hidden lg:flex"
+        />
+      ) : null}
       {showTagline ? (
         <span
           className={`font-sans font-semibold uppercase text-amber ${scale.tagline}`}
@@ -75,7 +144,7 @@ export function Logo({
   }
 
   return (
-    <Link href="/" className="group inline-block min-w-0" aria-label={BRAND_NAME}>
+    <Link href="/" scroll={false} className="group inline-block min-w-0" aria-label={BRAND_NAME}>
       {content}
     </Link>
   );
