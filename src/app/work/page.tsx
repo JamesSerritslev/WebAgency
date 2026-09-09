@@ -48,11 +48,11 @@ export default function WorkPage() {
           <p className="text-slate">
             If you want a similar site, the{" "}
             <Link href="/contact" className="font-semibold text-cobalt">
-              contact form
+              inquiry form
             </Link>{" "}
             is the start. For ranges, see{" "}
             <Link href="/pricing" className="font-semibold text-cobalt">
-              pricing
+              website rates
             </Link>
             .
           </p>
@@ -63,7 +63,10 @@ export default function WorkPage() {
           ))}
         </div>
       </section>
-      <CtaBand title="Want the next case study to be yours?" />
+      <CtaBand
+        title="Want the next case study to be yours?"
+        buttonLabel="Pitch a project"
+      />
     </main>
   );
 }

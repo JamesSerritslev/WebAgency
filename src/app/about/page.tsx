@@ -70,7 +70,7 @@ export default function AboutPage() {
           visibility so people find you when they look. I quote builds and
           monthly SEO in tiers on the{" "}
           <Link href="/pricing" className="text-cobalt">
-            pricing page
+            quoted tiers
           </Link>
           .
         </p>
@@ -92,7 +92,7 @@ export default function AboutPage() {
           </Button>
         </div>
       </article>
-      <CtaBand />
+      <CtaBand buttonLabel="Get in touch" />
     </main>
   );
 }

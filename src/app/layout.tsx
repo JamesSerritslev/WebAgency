@@ -63,6 +63,11 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  alternates: {
+    types: {
+      "text/markdown": "/llms.txt",
+    },
+  },
 };
 
 export const viewport: Viewport = {

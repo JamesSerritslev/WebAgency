@@ -2,6 +2,13 @@ export const articles = [
   {
     slug: "custom-website-vs-wordpress-for-local-businesses",
     title: "Why a custom website beats WordPress for a local business",
+    linkLabel: "Custom vs WordPress",
+    ctaLabel: "Discuss a rebuild",
+    related: [
+      { href: "/services/custom-websites", label: "custom builds" },
+      { href: "/services/seo", label: "local search" },
+      { href: "/services/ai-visibility", label: "AI citations" },
+    ],
     datePublished: "2026-08-01",
     description:
       "WordPress is common. For restaurants, trades, shops, and online stores, a custom site is usually faster, cleaner in search, and easier to own.",
@@ -21,6 +28,13 @@ export const articles = [
   {
     slug: "local-seo-for-small-shops",
     title: "Local SEO for restaurants, trades, and stores that want more calls",
+    linkLabel: "Local SEO for shops",
+    ctaLabel: "Discuss local SEO",
+    related: [
+      { href: "/services/custom-websites", label: "site builds" },
+      { href: "/services/seo", label: "SEO retainers" },
+      { href: "/services/ai-visibility", label: "AI answers" },
+    ],
     datePublished: "2026-08-08",
     description:
       "Local SEO is more than a Google Business Profile. Citations, on-page keywords, and a crawlable site help nearby customers find you.",
@@ -41,6 +55,13 @@ export const articles = [
   {
     slug: "what-is-ai-visibility-for-local-businesses",
     title: "What AI visibility means for a local business website",
+    linkLabel: "AI visibility explained",
+    ctaLabel: "Discuss AI visibility",
+    related: [
+      { href: "/services/custom-websites", label: "hand-built sites" },
+      { href: "/services/seo", label: "rankings work" },
+      { href: "/services/ai-visibility", label: "AI recommendations" },
+    ],
     datePublished: "2026-08-15",
     description:
       "Customers ask AI tools who to hire, book, or buy from. AI visibility is the work of making your business easy to cite with the right facts.",

@@ -56,25 +56,25 @@ export default function FaqPage() {
           <p className="text-slate">
             Open a question below for the short version, or read the{" "}
             <Link href="/pricing" className="font-semibold text-cobalt">
-              pricing page
+              rate list
             </Link>{" "}
-            if you want the numbers first. If your question is not here, the{" "}
+            if you want the numbers first. If your question is not here,{" "}
             <Link href="/contact" className="font-semibold text-cobalt">
-              contact form
-            </Link>{" "}
-            comes straight to me.
+              write me
+            </Link>
+            .
           </p>
         </div>
         <FaqList items={faqs} />
         <p className="mt-8 text-slate">
           Full ranges and what each tier includes are on the{" "}
           <Link href="/pricing" className="font-semibold text-cobalt">
-            pricing page
+            tier list
           </Link>
           .
         </p>
       </section>
-      <CtaBand title="Still have a question?" />
+      <CtaBand title="Still have a question?" buttonLabel="Ask me" />
     </main>
   );
 }

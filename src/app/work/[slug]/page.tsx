@@ -106,10 +106,10 @@ export default async function ProjectPage({ params }: Props) {
           title="Interested in a big custom web app?"
           body={`This kind of build is quoted separately from the published tiers. Email me directly at ${project.inquireEmail}.`}
           href={`mailto:${project.inquireEmail}`}
-          buttonLabel="Email me directly"
+          buttonLabel="Request a custom quote"
         />
       ) : (
-        <CtaBand />
+        <CtaBand buttonLabel="Tell me about yours" />
       )}
     </main>
   );

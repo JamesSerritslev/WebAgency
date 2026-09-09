@@ -46,16 +46,16 @@ export const navLinks = [
 ] as const;
 
 export const footerLinks = [
-  { href: "/work", label: "Work" },
-  { href: "/services", label: "Services" },
-  { href: "/services/custom-websites", label: "Custom websites" },
-  { href: "/services/seo", label: "SEO" },
-  { href: "/services/ai-visibility", label: "AI visibility" },
-  { href: "/pricing", label: "Pricing" },
-  { href: "/process", label: "Process" },
-  { href: "/about", label: "About" },
-  { href: "/insights", label: "Insights" },
-  { href: "/faq", label: "FAQ" },
-  { href: "/contact", label: "Contact" },
-  { href: "/privacy", label: "Privacy" },
+  { href: "/work", label: "Portfolio" },
+  { href: "/services", label: "What I offer" },
+  { href: "/services/custom-websites", label: "Custom sites" },
+  { href: "/services/seo", label: "Local search work" },
+  { href: "/services/ai-visibility", label: "AI search" },
+  { href: "/pricing", label: "Rates" },
+  { href: "/process", label: "How I work" },
+  { href: "/about", label: "About me" },
+  { href: "/insights", label: "Notes" },
+  { href: "/faq", label: "Questions" },
+  { href: "/contact", label: "Reach out" },
+  { href: "/privacy", label: "Privacy policy" },
 ] as const;

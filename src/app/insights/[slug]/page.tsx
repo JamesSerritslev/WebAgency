@@ -51,7 +51,7 @@ export default async function ArticlePage({ params }: Props) {
         description={article.description}
         crumbs={[
           { href: "/insights", label: "Insights" },
-          { href: `/insights/${article.slug}`, label: article.title },
+          { href: `/insights/${article.slug}`, label: article.linkLabel },
         ]}
       />
       <article className="prose-page mx-auto max-w-3xl px-5 py-12 sm:px-6 sm:py-16 lg:px-8">
@@ -60,21 +60,18 @@ export default async function ArticlePage({ params }: Props) {
         ))}
         <p className="mt-10">
           Related:{" "}
-          <Link href="/services/custom-websites" className="text-cobalt">
-            custom websites
-          </Link>
-          ,{" "}
-          <Link href="/services/seo" className="text-cobalt">
-            SEO
-          </Link>
-          , and{" "}
-          <Link href="/services/ai-visibility" className="text-cobalt">
-            AI visibility
-          </Link>
+          {article.related.map((item, index) => (
+            <span key={item.href}>
+              {index === 0 ? "" : index === article.related.length - 1 ? ", and " : ", "}
+              <Link href={item.href} className="text-cobalt">
+                {item.label}
+              </Link>
+            </span>
+          ))}
           .
         </p>
       </article>
-      <CtaBand />
+      <CtaBand buttonLabel={article.ctaLabel} />
     </main>
   );
 }

@@ -10,3 +10,14 @@ export const TAGLINE =
   "Custom websites and SEO that help local businesses get found.";
 export const AUDIENCE =
   "restaurants, bars, wineries, cafes, online stores, plumbers, contractors, electricians, HVAC companies, landscapers, auto shops, salons, gyms, clinics, and other local trades or storefronts";
+
+export const SOCIAL_LINKS = [
+  {
+    href: "https://www.facebook.com/profile.php?id=61594162109386",
+    label: "Facebook",
+  },
+  {
+    href: "https://www.linkedin.com/company/143692912/",
+    label: "LinkedIn",
+  },
+] as const;

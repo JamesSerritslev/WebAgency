@@ -35,9 +35,7 @@ export default function ContactPage() {
               </li>
               <li className="flex min-w-0 items-center gap-2">
                 <span aria-hidden="true">/</span>
-                <Link href="/contact" className="hover:text-amber">
-                  Contact
-                </Link>
+                <span aria-current="page">Contact</span>
               </li>
             </ol>
           </nav>

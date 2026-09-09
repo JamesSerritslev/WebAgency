@@ -21,7 +21,12 @@ export function pageMetadata({
     title,
     description,
     keywords,
-    alternates: { canonical: path },
+    alternates: {
+      canonical: path,
+      types: {
+        "text/markdown": "/llms.txt",
+      },
+    },
     openGraph: {
       title: `${title} | ${BRAND_NAME}`,
       description,

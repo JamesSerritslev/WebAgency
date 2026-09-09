@@ -52,7 +52,7 @@ export default function ServicesPage() {
             the site, the rankings, and the AI facts stay consistent. Open a
             service below for what each one includes, or jump to{" "}
             <Link href="/pricing" className="font-semibold text-cobalt">
-              pricing
+              quoted numbers
             </Link>{" "}
             if you want the numbers first.
           </p>
@@ -81,13 +81,13 @@ export default function ServicesPage() {
         </div>
         <p className="mt-10 text-slate">
           Want the numbers first?{" "}
-          <Link href="/pricing" className="font-semibold text-cobalt">
-            See website and SEO pricing
-          </Link>
+            <Link href="/pricing" className="font-semibold text-cobalt">
+              full rate card
+            </Link>
           .
         </p>
       </section>
-      <CtaBand />
+      <CtaBand buttonLabel="Request the work" />
     </main>
   );
 }

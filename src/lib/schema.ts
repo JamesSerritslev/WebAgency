@@ -3,6 +3,7 @@ import {
   BRAND_NAME,
   CONTACT_EMAIL,
   OWNER_NAME,
+  SOCIAL_LINKS,
   TAGLINE,
 } from "@/lib/brand";
 import type { PricingTier } from "@/lib/content/pricing";
@@ -28,6 +29,7 @@ export function organizationSchema() {
       "@type": "QuantitativeValue",
       value: 1,
     },
+    sameAs: SOCIAL_LINKS.map((link) => link.href),
     serviceType: [
       "Custom website design",
       "Search engine optimization",

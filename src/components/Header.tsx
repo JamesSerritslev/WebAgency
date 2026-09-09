@@ -156,7 +156,7 @@ export function Header() {
             ))}
             <li className="px-5 pt-2 pb-4">
               <Button href="/contact" className="w-full" onClick={() => setOpen(false)}>
-                Start a project
+                Open the form
               </Button>
             </li>
           </ul>

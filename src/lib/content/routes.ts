@@ -19,4 +19,5 @@ export const routes = [
   "/faq",
   "/contact",
   "/privacy",
+  "/llms.txt",
 ] as const;

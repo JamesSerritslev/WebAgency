@@ -97,8 +97,8 @@ export function Logo({
   const isHeader = size === "header" || size === "headerCompact";
   const logoSrc = isHeader ? "/brand/cor-logo.png" : "/brand/cor-logo-dark.png";
 
-  const content = (
-    <span className={`inline-flex flex-col ${scale.gap} ${className}`.trim()}>
+  const mark = (
+    <span className={`inline-flex flex-col ${scale.gap}`}>
       <span className={`inline-flex items-end gap-2 md:gap-3 ${isHeader ? "min-w-0" : "flex-wrap"}`}>
         <Image
           src={logoSrc}
@@ -123,6 +123,18 @@ export function Logo({
           <span>{BRAND_SUFFIX}</span>
         </span>
       ) : null}
+    </span>
+  );
+
+  return (
+    <span className={`inline-flex min-w-0 flex-col ${className}`.trim()}>
+      {asLink ? (
+        <Link href="/" scroll={false} className="group inline-block min-w-0" aria-label={BRAND_NAME}>
+          {mark}
+        </Link>
+      ) : (
+        mark
+      )}
       {showNavTagline ? (
         <NavTagline
           visible={navTaglineVisible}
@@ -137,15 +149,5 @@ export function Logo({
         </span>
       ) : null}
     </span>
-  );
-
-  if (!asLink) {
-    return content;
-  }
-
-  return (
-    <Link href="/" scroll={false} className="group inline-block min-w-0" aria-label={BRAND_NAME}>
-      {content}
-    </Link>
   );
 }

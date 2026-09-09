@@ -42,7 +42,7 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap lg:mt-8">
               <Button href="/contact" className="w-full sm:w-auto">
-                Start a project
+                Talk about a build
               </Button>
               <Button
                 href="/work"
@@ -88,19 +88,25 @@ export default function HomePage() {
           </p>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
-              <Link
+              <article
                 key={service.slug}
-                href={`/services/${service.slug}`}
-                className="rounded-3xl border border-white/10 bg-paper p-7 text-ink transition hover:-translate-y-0.5 hover:border-amber/40 lg:border-ink/10"
+                className="relative rounded-3xl border border-white/10 bg-paper p-7 text-ink transition hover:-translate-y-0.5 hover:border-amber/40 lg:border-ink/10"
               >
                 <p className="text-sm font-semibold uppercase tracking-[0.16em] text-amber">
                   {service.eyebrow}
                 </p>
-                <h3 className="mt-3 font-display text-2xl text-ink">{service.title}</h3>
+                <h3 className="mt-3 font-display text-2xl text-ink">
+                  <Link
+                    href={`/services/${service.slug}`}
+                    className="after:absolute after:inset-0 after:z-10"
+                  >
+                    {service.title}
+                  </Link>
+                </h3>
                 <p className="mt-3 text-sm leading-relaxed text-slate">
                   {service.summary}
                 </p>
-              </Link>
+              </article>
             ))}
           </div>
         </div>
@@ -130,7 +136,7 @@ export default function HomePage() {
           </div>
           <div className="mt-8 lg:hidden">
             <Button href="/work" variant="secondary" className="w-full sm:w-auto">
-              All work
+              Browse the portfolio
             </Button>
           </div>
         </div>
@@ -175,7 +181,7 @@ export default function HomePage() {
             ))}
           </dl>
           <Link href="/faq" className="mt-6 inline-block text-sm font-semibold text-cobalt">
-            Read the full FAQ
+            Full FAQ
           </Link>
         </div>
       </section>

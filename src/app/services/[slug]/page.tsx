@@ -110,23 +110,43 @@ export default async function ServicePage({ params }: Props) {
               ))}
             <li>
               <Link href="/work" className="text-cobalt">
-                Selected work
+                {service.slug === "custom-websites"
+                  ? "See live sites"
+                  : service.slug === "seo"
+                    ? "Recent builds"
+                    : "Portfolio examples"}
               </Link>
             </li>
             <li>
               <Link href="/pricing" className="text-cobalt">
-                Pricing
+                {service.slug === "custom-websites"
+                  ? "Build rates"
+                  : service.slug === "seo"
+                    ? "SEO rates"
+                    : "Search rates"}
               </Link>
             </li>
             <li>
               <Link href="/faq" className="text-cobalt">
-                FAQ
+                {service.slug === "custom-websites"
+                  ? "Website FAQs"
+                  : service.slug === "seo"
+                    ? "SEO FAQs"
+                    : "AI search FAQs"}
               </Link>
             </li>
           </ul>
         </aside>
       </section>
-      <CtaBand />
+      <CtaBand
+        buttonLabel={
+          service.slug === "custom-websites"
+            ? "Ask about a site"
+            : service.slug === "seo"
+              ? "Ask about SEO"
+              : "Ask about AI search"
+        }
+      />
     </main>
   );
 }

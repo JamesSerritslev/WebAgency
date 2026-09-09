@@ -46,7 +46,7 @@ export default function InsightsPage() {
             whether to rebuild, add monthly SEO, or leave the current site
             alone. If you want the work done rather than another article, the{" "}
             <Link href="/contact" className="font-semibold text-cobalt">
-              contact form
+              project form
             </Link>{" "}
             is the next step.
           </p>
@@ -58,19 +58,23 @@ export default function InsightsPage() {
         </div>
         <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {articles.map((article) => (
-            <li key={article.slug} className="min-w-0 rounded-3xl border border-ink/10 bg-paper p-6 sm:p-7">
+            <li key={article.slug} className="relative min-w-0 rounded-3xl border border-ink/10 bg-paper p-6 sm:p-7">
               <p className="text-sm text-slate">{article.datePublished}</p>
-              <h2 className="mt-3 font-display text-2xl">
-                <Link href={`/insights/${article.slug}`}>{article.title}</Link>
-              </h2>
+              <h2 className="mt-3 font-display text-2xl">{article.title}</h2>
               <p className="mt-3 text-sm leading-relaxed text-slate">
                 {article.description}
               </p>
+              <Link
+                href={`/insights/${article.slug}`}
+                className="mt-4 inline-block text-sm font-semibold text-cobalt after:absolute after:inset-0 after:z-10"
+              >
+                {article.linkLabel}
+              </Link>
             </li>
           ))}
         </ul>
       </section>
-      <CtaBand />
+      <CtaBand buttonLabel="Talk through a rebuild" />
     </main>
   );
 }

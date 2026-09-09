@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BRAND_NAME, CONTACT_EMAIL } from "@/lib/brand";
+import { BRAND_NAME, CONTACT_EMAIL, SOCIAL_LINKS } from "@/lib/brand";
 import { Logo } from "@/components/Logo";
 import { footerLinks } from "@/lib/content/nav";
 
@@ -19,6 +19,20 @@ export function Footer() {
           >
             {CONTACT_EMAIL}
           </a>
+          <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+            {SOCIAL_LINKS.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-chalk/70 hover:text-amber"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
         <div className="min-w-0">
           <p className="text-sm font-semibold uppercase tracking-[0.16em] text-chalk/50">

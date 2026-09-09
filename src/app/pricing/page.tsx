@@ -136,9 +136,7 @@ export default function PricingPage() {
               </li>
               <li className="flex items-center gap-2">
                 <span aria-hidden="true">/</span>
-                <Link href="/pricing" className="hover:text-amber">
-                  Pricing
-                </Link>
+                <span aria-current="page">Pricing</span>
               </li>
             </ol>
           </nav>
@@ -154,26 +152,24 @@ export default function PricingPage() {
             after a short call.
           </p>
           <div className="mt-10 grid max-w-xl gap-4 sm:grid-cols-2">
-            <Link
-              href="#website-build"
-              className="rounded-2xl bg-ink-soft p-5 transition hover:bg-ink-soft/80"
-            >
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber">
-                Website
-              </p>
+            <article className="relative rounded-2xl bg-ink-soft p-5 transition hover:bg-ink-soft/80">
+              <h2 className="text-xs font-semibold uppercase tracking-[0.16em] text-amber">
+                <Link href="#website-build" className="after:absolute after:inset-0 after:z-10">
+                  Website builds
+                </Link>
+              </h2>
               <p className="mt-2 font-display text-3xl">$700</p>
               <p className="mt-1 text-sm text-chalk/60">one-time</p>
-            </Link>
-            <Link
-              href="#seo"
-              className="rounded-2xl bg-ink-soft p-5 transition hover:bg-ink-soft/80"
-            >
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber">
-                SEO
-              </p>
+            </article>
+            <article className="relative rounded-2xl bg-ink-soft p-5 transition hover:bg-ink-soft/80">
+              <h2 className="text-xs font-semibold uppercase tracking-[0.16em] text-amber">
+                <Link href="#seo" className="after:absolute after:inset-0 after:z-10">
+                  Monthly SEO
+                </Link>
+              </h2>
               <p className="mt-2 font-display text-3xl">$750</p>
               <p className="mt-1 text-sm text-chalk/60">per month</p>
-            </Link>
+            </article>
           </div>
         </div>
       </section>
@@ -258,7 +254,7 @@ export default function PricingPage() {
         <TierGrid tiers={seoTiers} kind="seo" />
       </section>
 
-      <CtaBand title="Not sure which tier fits?" />
+      <CtaBand title="Not sure which tier fits?" buttonLabel="Get a quote" />
     </main>
   );
 }

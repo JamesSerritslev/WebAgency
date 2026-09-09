@@ -46,7 +46,7 @@ export default function ProcessPage() {
           ))}
         </ol>
       </section>
-      <CtaBand title="Ready for step one?" />
+      <CtaBand title="Ready for step one?" buttonLabel="Start step one" />
     </main>
   );
 }

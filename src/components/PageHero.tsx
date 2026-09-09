@@ -23,12 +23,16 @@ export function PageHero({
                   Home
                 </Link>
               </li>
-              {crumbs.map((item) => (
+              {crumbs.map((item, index) => (
                 <li key={item.href} className="flex min-w-0 items-center gap-2">
                   <span aria-hidden="true">/</span>
-                  <Link href={item.href} className="hover:text-amber">
-                    {item.label}
-                  </Link>
+                  {index === crumbs.length - 1 ? (
+                    <span aria-current="page">{item.label}</span>
+                  ) : (
+                    <Link href={item.href} className="hover:text-amber">
+                      {item.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ol>
@@ -54,7 +58,7 @@ export function CtaBand({
   title = "Tell me what you need",
   body = "Share your business, your site problems, and what you want customers to do. It comes straight to me, and you get a reply with next steps.",
   href = "/contact",
-  buttonLabel = "Start a project",
+  buttonLabel = "Send a note",
 }: {
   title?: string;
   body?: string;
