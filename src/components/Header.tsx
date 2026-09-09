@@ -4,37 +4,42 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Logo, NavTagline } from "@/components/Logo";
-import { NAV_EXPAND_BELOW, NAV_SHRINK_AFTER, navLinks } from "@/lib/content/nav";
+import {
+  NAV_EXPAND_BELOW,
+  NAV_SHRINK_AFTER,
+  getNavShrunk,
+  isNavHeld,
+  navLinks,
+  setNavShrunk,
+} from "@/lib/content/nav";
 import { Button } from "@/components/Button";
 
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [shrunk, setShrunk] = useState(false);
+  const [shrunk, setShrunk] = useState(getNavShrunk);
   const [desktop, setDesktop] = useState(false);
-  const [mobileTaglineMounted, setMobileTaglineMounted] = useState(false);
+  const [mobileTaglineMounted, setMobileTaglineMounted] = useState(getNavShrunk);
   const navRef = useRef<HTMLElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
-  const pathRef = useRef(pathname);
-  const keepSmallUntil = useRef(0);
 
   useEffect(() => {
-    if (pathRef.current === pathname) return;
-    pathRef.current = pathname;
-    keepSmallUntil.current = Date.now() + 400;
-    setShrunk(true);
-    setMobileTaglineMounted(true);
+    setOpen(false);
   }, [pathname]);
 
   useEffect(() => {
     const desktopQuery = window.matchMedia("(min-width: 1024px)");
     const onScroll = () => {
       const y = window.scrollY;
-      if (Date.now() < keepSmallUntil.current) {
-        setShrunk(true);
+      if (isNavHeld()) {
+        setShrunk(getNavShrunk());
         return;
       }
-      setShrunk((current) => (current ? y > NAV_EXPAND_BELOW : y > NAV_SHRINK_AFTER));
+      setShrunk((current) => {
+        const next = current ? y > NAV_EXPAND_BELOW : y > NAV_SHRINK_AFTER;
+        setNavShrunk(next);
+        return next;
+      });
     };
     const onResize = () => {
       setDesktop(desktopQuery.matches);

@@ -9,7 +9,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "FAQ about custom websites, SEO, and AI visibility",
   description:
-    "Answers about custom web design versus WordPress, timelines, cost, hosting and maintenance, monthly SEO as a separate service, AI visibility, ownership, ecommerce, and how to start a project with COR Web Solutions.",
+    "Answers on custom web design vs WordPress, cost, timelines, hosting, monthly SEO, AI visibility, ownership, and how to start with COR Web Solutions.",
   path: "/faq",
   keywords: [
     "custom website FAQ",
@@ -32,6 +32,39 @@ export default function FaqPage() {
         crumbs={[{ href: "/faq", label: "FAQ" }]}
       />
       <section className="mx-auto max-w-3xl px-5 py-12 sm:px-6 sm:py-16 lg:px-8">
+        <div className="prose-page mb-12">
+          <h2 className="font-display text-3xl">Before you send the form</h2>
+          <p className="mt-4 text-slate">
+            These are the questions people ask most before they hire me for a
+            custom website or SEO. I write them in plain language so you can
+            decide if the work fits, and so search engines can quote the same
+            answers.
+          </p>
+          <p className="text-slate">
+            Custom means I write the site as original code. It is not a
+            WordPress theme and not a page builder. That is why the sites stay
+            faster and easier to rank than a template with a plugin stack.
+            Builds are quoted in tiers. Hosting and maintenance is a small
+            monthly fee after launch. Monthly SEO is separate, and nothing
+            extra starts unless you choose it.
+          </p>
+          <p className="text-slate">
+            The list below covers businesses I build for, why not WordPress,
+            timelines, cost, hosting, monthly SEO, AI visibility, ownership,
+            ecommerce, and who you work with. Open a row for the short answer.
+          </p>
+          <p className="text-slate">
+            Open a question below for the short version, or read the{" "}
+            <Link href="/pricing" className="font-semibold text-cobalt">
+              pricing page
+            </Link>{" "}
+            if you want the numbers first. If your question is not here, the{" "}
+            <Link href="/contact" className="font-semibold text-cobalt">
+              contact form
+            </Link>{" "}
+            comes straight to me.
+          </p>
+        </div>
         <FaqList items={faqs} />
         <p className="mt-8 text-slate">
           Full ranges and what each tier includes are on the{" "}

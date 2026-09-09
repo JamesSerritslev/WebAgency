@@ -21,6 +21,7 @@ const extra: Record<string, string[]> = {
     "Keyword research for a local business is specific. People look for a plumber nearby, a contractor for a remodel, a restaurant for tonight, or a store that ships. I map those phrases to real URLs instead of stuffing them into one homepage.",
     "Local citations and backlinks still matter. Name, address, and hours should match across directories. I chase mentions from local press, partners, and events because they send both people and ranking signals.",
     "Growth and Full-Scale SEO put Google Reviews on the website. Visitors see a rating and recent reviews before they call, and search systems get review schema that matches what people actually wrote. Full-Scale adds a review section on key pages and write-a-review prompts so new reviews keep coming.",
+    "Growth and Full-Scale also include AI visibility: schema and clear facts so ChatGPT and Google AI Overviews can cite the business. Full-Scale adds citation tracking and optimization. Starter does not include that work.",
     "Heavy analysis means looking at what already ranks, where you leak, and which pages deserve the next write. I do that every month, as well as an in-depth report of how your site is performing.",
   ],
   "ai-visibility": [

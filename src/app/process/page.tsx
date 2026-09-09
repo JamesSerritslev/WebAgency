@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Process for custom websites and SEO",
   description:
-    "How COR Web Solutions runs a project: discovery, SEO-friendly sitemap, custom build, launch, and SEO work that helps people find your business. Clear steps, no page builders.",
+    "How a COR Web Solutions project runs: discovery, SEO sitemap, custom build, launch, and search work that helps people find your business.",
   path: "/process",
   keywords: [
     "website design process",

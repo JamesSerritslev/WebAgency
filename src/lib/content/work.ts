@@ -31,7 +31,7 @@ export const projects: Project[] = [
     summary:
       "A custom site for a vinyl lounge and wine bar. Within the first month of SEO work, dozens of customers were already finding Analogue Room through its online presence.",
     metaDescription:
-      "Case study: custom website and SEO for Analogue Room in Solvang. Within the first month of SEO work, dozens of customers found the vinyl lounge through its online presence.",
+      "Custom website and SEO for Analogue Room in Solvang. Within the first month of SEO, dozens of customers found the vinyl lounge online.",
     keywords: [
       "bar website design",
       "vinyl lounge website",
@@ -39,11 +39,11 @@ export const projects: Project[] = [
       "custom bar website",
     ],
     challenge:
-      "A new nightlife room needed more than a template with stock photos. Guests search for wine bars, vinyl, pizza, and things to do nearby. The site had to feel like the room, load fast on a phone, and make hours, location, and menus obvious.",
+      "A new nightlife room needed more than a template with stock photos. Guests search for wine bars, vinyl, pizza, and things to do nearby. The site had to feel like the room, load fast on a phone, and make hours, location, and menus obvious.\n\nAnalogue Room sits in Solvang, where visitors already compare tasting rooms and evening spots. If the site was slow, vague, or generic, those searches would go to whoever already had a clear page. They also needed a site that could grow: events, menus, and SEO pages without rebuilding the whole thing later.",
     approach:
-      "The site was written as a custom build, not a WordPress theme. Page structure follows how people search: vinyl lounge, wine bar, pizza, and private events. Copy, schema, and internal links support those queries without stuffing keywords.",
+      "The site was written as a custom build, not a WordPress theme. Page structure follows how people search: vinyl lounge, wine bar, pizza, and private events. Copy, schema, and internal links support those queries without stuffing keywords.\n\nI built the pages so a phone visitor can find the address, hours, and what kind of night it is in a few seconds. Desktop still gets the photography and the mood. Technical work included clean markup, sensible headings, and a layout that stays fast as images load.",
     result:
-      "Analogue Room launched with a homepage that states the offer in seconds and dedicated paths for drinks and food. Within the first month of SEO work, dozens of customers were already finding the room through its online presence.",
+      "Analogue Room launched with a homepage that states the offer in seconds and dedicated paths for drinks and food. Within the first month of SEO work, dozens of customers were already finding the room through its online presence.\n\nThat first month is the point of doing structure and copy before you treat SEO as a later add-on. The site was ready to rank as soon as people started searching for a vinyl lounge and wine bar in Solvang.",
     selected: true,
   },
   {
@@ -66,11 +66,11 @@ export const projects: Project[] = [
       "custom crush website",
     ],
     challenge:
-      "Standing Sun is a working winery, a concert room, a private event venue, and a custom crush facility. A single brochure page would bury the offers that bring in different customers.",
+      "Standing Sun is a working winery, a concert room, a private event venue, and a custom crush facility. A single brochure page would bury the offers that bring in different customers.\n\nPeople looking for a tasting, a live show, a wedding space, or custom crush are not searching the same way. If those paths share one vague homepage, the wrong visitor bounces and the right visitor never finds the page that would have booked them. The site also had to feel like Standing Sun, not a generic wine template.",
     approach:
-      "The information architecture splits those jobs into clear routes: the winery, live events, private events, and the sister property. Each page can rank for its own searches while still feeling like one brand.",
+      "The information architecture splits those jobs into clear routes: the winery, live events, private events, and the sister property. Each page can rank for its own searches while still feeling like one brand.\n\nThe build is custom, so the layout, photography, and copy can change by page without fighting a theme. Technical SEO sits in the structure from the start: titles, headings, and internal links that match how people actually look for a Buellton winery, a show, or a private booking.",
     result:
-      "Visitors can find concerts, book private events, or learn about custom crush without hunting. The site stays light, visual, and ready for content and SEO work as the calendar fills.",
+      "Visitors can find concerts, book private events, or learn about custom crush without hunting. The site stays light, visual, and ready for content and SEO work as the calendar fills.\n\nThat split also gives search engines something useful to index. Each offer has a real URL and a clear purpose, which is how a multi-sided hospitality business gets found for more than one query.",
     selected: true,
   },
   {
@@ -85,7 +85,7 @@ export const projects: Project[] = [
     summary:
       "A custom portfolio you can send to potential clients, recruiters, or anyone you want to show your work to. The style is not limited. This is one look, not the only look.",
     metaDescription:
-      "Case study: a custom personal portfolio for clients, recruiters, and anyone you want to show your work to. The style is not limited, and it is not only for resumes.",
+      "A custom personal portfolio for clients, recruiters, and anyone you want to show your work. Style is not limited, and it is not only for resumes.",
     keywords: [
       "personal portfolio website",
       "custom portfolio site",
@@ -112,7 +112,7 @@ export const projects: Project[] = [
     summary:
       "A music networking web app with a full backend: accounts, user data, events, and notifications so people can find others to jam with. This was a passion project, and it sits outside the published pricing tiers.",
     metaDescription:
-      "Case study: BandScope, a full music networking web app with accounts, events, and notifications. A passion project that shows what a larger custom build can be. Contact James directly for work at this scale.",
+      "BandScope is a music networking app with accounts, events, and notifications. A passion project that shows what a larger custom web app can be.",
     keywords: [
       "custom web application",
       "music networking app",

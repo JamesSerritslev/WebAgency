@@ -102,7 +102,7 @@ export function Logo({
       <span className={`inline-flex items-end gap-2 md:gap-3 ${isHeader ? "min-w-0" : "flex-wrap"}`}>
         <Image
           src={logoSrc}
-          alt=""
+          alt={BRAND_NAME}
           width={671}
           height={298}
           priority={isHeader}

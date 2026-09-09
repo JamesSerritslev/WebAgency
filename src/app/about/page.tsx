@@ -9,7 +9,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "About COR Web Solutions",
   description:
-    "COR Web Solutions is one person: James Serritslev. Custom web design and SEO for local businesses, hand-built without WordPress. COR stands for Create, Optimize, Rank.",
+    "COR Web Solutions is James Serritslev. Custom websites and SEO for local businesses, built without WordPress. Create, Optimize, Rank.",
   path: "/about",
   keywords: [
     "about COR Web Solutions",

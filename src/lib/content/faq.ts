@@ -49,12 +49,12 @@ export const faqs: readonly Faq[] = [
   {
     question: "What is included in monthly SEO?",
     answer:
-      "Monthly SEO is quoted in three tiers: Starter $750 - $950, Growth $1,500 - $1,900, and Full-Scale $2,400 - $2,850. Depending on the tier, the work covers keyword tracking, Google Business Profile, reviews, content, backlink outreach, reporting, and AI visibility. Growth and Full-Scale also put Google Reviews on the website so visitors see proof before they call. It is a separate monthly charge, not part of hosting and maintenance.",
+      "Monthly SEO is quoted in three tiers: Starter $750 - $950, Growth $1,500 - $1,900, and Full-Scale $2,400 - $2,850. Depending on the tier, the work covers keyword tracking, Google Business Profile, reviews, content, backlink outreach, and reporting. Growth and Full-Scale also include AI visibility and Google Reviews on the website so visitors see proof before they call. It is a separate monthly charge, not part of hosting and maintenance.",
   },
   {
     question: "What do you mean by AI visibility?",
     answer:
-      "People now ask ChatGPT, Google AI Overviews, and similar tools for recommendations. AI visibility means structuring your site, schema, and content so those systems can cite your business clearly, with accurate services, location context, and proof. It is offered with monthly SEO, not as a default after launch.",
+      "People now ask ChatGPT, Google AI Overviews, and similar tools for recommendations. AI visibility means structuring your site, schema, and content so those systems can cite your business clearly, with accurate services, location context, and proof. It is included with Growth and Full-Scale monthly SEO, not with Starter.",
   },
   {
     question: "Will I be able to update the website myself?",

@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Button } from "@/components/Button";
 import { ContactForm } from "@/components/ContactForm";
 import { WorkCard } from "@/components/WorkCard";
-import { BRAND_FULL } from "@/lib/brand";
 import { homepageFaqs } from "@/lib/content/faq";
 import { services } from "@/lib/content/services";
 import { selectedProjects } from "@/lib/content/work";
@@ -11,7 +10,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Custom websites, SEO, and AI visibility",
   description:
-    "Hey, I am James Serritslev. I build custom sites for restaurants, trades, shops, online stores, resumes, and pretty much anything you can think of. My SEO work helps people find you when they search.",
+    "Custom websites for restaurants, trades, shops, and stores. Built by James Serritslev, with SEO that helps people find you when they search.",
   path: "/",
   keywords: [
     "custom website design",
@@ -27,33 +26,34 @@ export const metadata = pageMetadata({
 export default function HomePage() {
   return (
     <main>
-      <section className="relative flex min-h-svh items-center overflow-hidden bg-ink text-chalk">
+      <section className="relative flex min-h-[calc(100dvh-5.5rem)] flex-col overflow-hidden bg-paper text-ink lg:min-h-svh lg:items-center lg:bg-ink lg:text-chalk">
         <div className="absolute inset-y-0 right-0 hidden w-1/3 bg-amber lg:block" aria-hidden="true" />
-        <div className="relative mx-auto grid w-full max-w-6xl gap-10 px-5 py-12 sm:gap-12 sm:px-6 sm:py-16 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:py-20">
-          <div className="min-w-0">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-amber">
-              {BRAND_FULL}
-            </p>
-            <h1 className="mt-5 font-display text-[2rem] leading-[1.05] sm:text-4xl lg:text-6xl">
+        <div className="relative mx-auto flex w-full max-w-6xl flex-1 flex-col justify-between gap-6 px-5 py-6 sm:gap-8 sm:px-6 sm:py-8 lg:grid lg:flex-none lg:grid-cols-[1.15fr_0.85fr] lg:gap-10 lg:px-8 lg:py-20">
+          <div className="contents min-w-0 lg:block">
+            <h1 className="font-display text-[2rem] leading-[1.05] sm:text-4xl lg:text-6xl">
               Custom websites for local businesses that want to be found.
             </h1>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-chalk/75 sm:mt-6 sm:text-lg">
+            <p className="max-w-xl text-base leading-relaxed text-slate sm:text-lg lg:mt-5 lg:text-chalk/75">
               Custom sites for restaurants, trades, shops, online stores,
               resumes, and pretty much anything you can think of. No corporate waiting to approve.
               It is simple and straightforward. My SEO (search engine
               optimization) work helps people find you when they search for
               your business or related searches.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap lg:mt-8">
               <Button href="/contact" className="w-full sm:w-auto">
                 Start a project
               </Button>
-              <Button href="/work" variant="ghost" className="w-full sm:w-auto">
+              <Button
+                href="/work"
+                variant="secondary"
+                className="w-full sm:w-auto lg:border-white/35 lg:text-white lg:hover:border-amber lg:hover:bg-amber"
+              >
                 See the work
               </Button>
             </div>
           </div>
-          <ul className="relative z-10 grid content-center gap-4 self-center rounded-3xl bg-ink-soft p-5 sm:p-6 lg:p-8">
+          <ul className="relative z-10 grid content-center gap-4 rounded-3xl border border-ink/10 bg-mist/50 p-5 sm:p-6 lg:self-center lg:border-0 lg:bg-ink-soft lg:p-8">
             {[
               "Custom-built by me, not a template",
               "SEO that helps people find you",
@@ -62,7 +62,7 @@ export default function HomePage() {
             ].map((item) => (
               <li
                 key={item}
-                className="border-b border-white/10 pb-4 text-base last:border-none last:pb-0 sm:text-lg"
+                className="border-b border-ink/10 pb-4 text-base last:border-transparent last:pb-0 sm:text-lg lg:border-white/10 lg:last:border-transparent"
               >
                 {item}
               </li>
@@ -71,36 +71,38 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-        <p className="text-sm font-semibold uppercase tracking-[0.16em] text-amber">
-          Built for
-        </p>
-        <h2 className="mt-3 max-w-3xl font-display text-3xl sm:text-4xl lg:text-5xl">
-          Restaurants, trades, shops, and stores that live on search and referrals.
-        </h2>
-        <p className="mt-5 max-w-2xl leading-relaxed text-slate">
-          That includes restaurants, bars, wineries, cafes, online stores,
-          plumbers, contractors, electricians, HVAC companies, landscapers,
-          auto shops, salons, gyms, clinics, and similar local businesses. A
-          custom site can carry the brand and the keywords without looking
-          like everyone else.
-        </p>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
-            <Link
-              key={service.slug}
-              href={`/services/${service.slug}`}
-              className="rounded-3xl border border-ink/10 bg-paper p-7 transition hover:-translate-y-0.5 hover:border-amber/40"
-            >
-              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-amber">
-                {service.eyebrow}
-              </p>
-              <h3 className="mt-3 font-display text-2xl">{service.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-slate">
-                {service.summary}
-              </p>
-            </Link>
-          ))}
+      <section className="bg-ink text-chalk lg:bg-transparent lg:text-ink">
+        <div className="mx-auto max-w-6xl px-5 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-amber">
+            Built for
+          </p>
+          <h2 className="mt-3 max-w-3xl font-display text-3xl sm:text-4xl lg:text-5xl">
+            Restaurants, trades, shops, and stores that live on search and referrals.
+          </h2>
+          <p className="mt-5 max-w-2xl leading-relaxed text-chalk/75 lg:text-slate">
+            That includes restaurants, bars, wineries, cafes, online stores,
+            plumbers, contractors, electricians, HVAC companies, landscapers,
+            auto shops, salons, gyms, clinics, and similar local businesses. A
+            custom site can carry the brand and the keywords without looking
+            like everyone else.
+          </p>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map((service) => (
+              <Link
+                key={service.slug}
+                href={`/services/${service.slug}`}
+                className="rounded-3xl border border-white/10 bg-paper p-7 text-ink transition hover:-translate-y-0.5 hover:border-amber/40 lg:border-ink/10"
+              >
+                <p className="text-sm font-semibold uppercase tracking-[0.16em] text-amber">
+                  {service.eyebrow}
+                </p>
+                <h3 className="mt-3 font-display text-2xl text-ink">{service.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-slate">
+                  {service.summary}
+                </p>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 

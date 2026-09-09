@@ -9,7 +9,7 @@ export const services = [
     description:
       "Quality custom-coded websites that will outperform cheap templatized websites when it comes to security, speed, and visibility.",
     metaDescription:
-      "Custom website design for local businesses: restaurants, trades, shops, and stores. Hand-built sites with no WordPress, fast load times, and SEO that helps customers find you.",
+      "Custom website design for restaurants, trades, shops, and stores. Hand-built, no WordPress, fast on a phone, with SEO so customers can find you.",
     keywords: [
       "custom website design",
       "custom websites for small business",
@@ -51,6 +51,7 @@ export const services = [
       "More reviews coming in",
       "Pages mapped to the searches customers actually type",
       "More traffic, calls, and sales from search",
+      "AI visibility on Growth and Full-Scale so ChatGPT and Google AI Overviews can cite you",
       "A monthly report on how the site is performing",
     ],
   },
@@ -64,7 +65,7 @@ export const services = [
     description:
       "AI changed the game of SEO, and many businesses are not taking advantage of this. Ranking on AI Overviews obtains almost all of the traffic in modern searches.",
     metaDescription:
-      "AI visibility for local businesses. Schema, entity-clear content, and structure so ChatGPT and Google AI Overviews can cite restaurants, trades, shops, and service companies.",
+      "AI visibility for local businesses: schema and clear facts so ChatGPT and Google AI Overviews can cite restaurants, trades, shops, and services.",
     keywords: [
       "AI visibility",
       "AI search optimization",

@@ -3,6 +3,8 @@ export const NAV_EXPAND_BELOW = 4;
 export const PAGE_TOP_SCROLL = 48;
 
 let appPath: string | null = null;
+let navShrunk = false;
+let navHoldUntil = 0;
 
 export function trackAppPath(pathname: string) {
   if (appPath === null) {
@@ -12,6 +14,26 @@ export function trackAppPath(pathname: string) {
   if (appPath === pathname) return "same" as const;
   appPath = pathname;
   return "changed" as const;
+}
+
+export function getNavShrunk() {
+  return navShrunk;
+}
+
+export function setNavShrunk(value: boolean) {
+  navShrunk = value;
+}
+
+export function holdNavState(ms = 450) {
+  navHoldUntil = Date.now() + ms;
+}
+
+export function isNavHeld() {
+  return Date.now() < navHoldUntil;
+}
+
+export function navScrollTop() {
+  return navShrunk ? PAGE_TOP_SCROLL : 0;
 }
 
 export const navLinks = [

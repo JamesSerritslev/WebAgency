@@ -121,7 +121,7 @@ export const seoTiers: PricingTier[] = [
     maxPrice: 1900,
     cadence: "monthly",
     featured: true,
-    summary: "Active ranking and content push across more search intent.",
+    summary: "Active ranking, content, and AI visibility across more search intent.",
     includes: [
       "Keyword tracking (up to about 40 target terms, split by cluster and intent)",
       "Full review management: respond to every review across Google, Yelp, and similar platforms",
@@ -130,7 +130,7 @@ export const seoTiers: PricingTier[] = [
       "Monthly reporting with week-to-week comparison and competitor benchmarking",
       "Content: 2 to 4 blog or landing pages per month, built around search clusters",
       "Active backlink outreach (press, directories, local partners)",
-      "Basic AI and LLM visibility monitoring (what is showing up in ChatGPT and AI search results)",
+      "AI visibility: schema and clear facts so ChatGPT and Google AI Overviews can cite the business, plus monthly citation checks",
     ],
   },
   {
@@ -149,7 +149,7 @@ export const seoTiers: PricingTier[] = [
       "Weekly or bi-weekly reporting with a full analytics dashboard",
       "Content: dedicated landing pages, seasonal campaigns, and a blog cadence of 4 or more posts per month",
       "Aggressive backlink and PR outreach (press pitches, partnerships, guest content)",
-      "Full AI and LLM visibility tracking and optimization (Semrush or an equivalent tool included)",
+      "Full AI visibility: schema, entity-clear content, citation tracking, and optimization so ChatGPT and Google AI Overviews recommend the business (Semrush or an equivalent tool included)",
       "Priority support and a direct point of contact for strategy changes",
     ],
   },

@@ -31,6 +31,31 @@ export default function InsightsPage() {
         crumbs={[{ href: "/insights", label: "Insights" }]}
       />
       <section className="mx-auto max-w-6xl px-5 py-12 sm:px-6 sm:py-16 lg:px-8">
+        <div className="prose-page mx-auto mb-12 max-w-3xl">
+          <h2 className="font-display text-3xl">What I write about</h2>
+          <p className="mt-4 text-slate">
+            These notes are for owners who want search traffic without a
+            template site. I write about why a custom build beats WordPress
+            for speed and rankings, how local SEO works for restaurants and
+            trades, and what AI visibility means when people ask ChatGPT or
+            Google AI Overviews for a recommendation.
+          </p>
+          <p className="text-slate">
+            I keep the articles practical. No jargon for its own sake, and no
+            filler to hit a word count. Each piece should help you decide
+            whether to rebuild, add monthly SEO, or leave the current site
+            alone. If you want the work done rather than another article, the{" "}
+            <Link href="/contact" className="font-semibold text-cobalt">
+              contact form
+            </Link>{" "}
+            is the next step.
+          </p>
+          <p className="text-slate">
+            New notes go here as I publish them. Topics stay close to the
+            work: custom websites, local search for restaurants and trades,
+            and getting cited in AI answers. Open a card for the full article.
+          </p>
+        </div>
         <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {articles.map((article) => (
             <li key={article.slug} className="min-w-0 rounded-3xl border border-ink/10 bg-paper p-6 sm:p-7">

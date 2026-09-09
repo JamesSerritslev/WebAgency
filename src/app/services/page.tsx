@@ -8,7 +8,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Web design, SEO, and AI visibility services",
   description:
-    "What I do at COR Web Solutions: custom websites without WordPress, plus SEO and AI visibility that help restaurants, trades, shops, and other local businesses get found.",
+    "Custom websites without WordPress, plus SEO and AI visibility that help restaurants, trades, shops, and local businesses get found.",
   path: "/services",
   keywords: [
     "web design services",
@@ -31,6 +31,32 @@ export default function ServicesPage() {
         crumbs={[{ href: "/services", label: "Services" }]}
       />
       <section className="mx-auto max-w-6xl px-5 py-12 sm:px-6 sm:py-16 lg:px-8">
+        <div className="prose-page mx-auto mb-12 max-w-3xl">
+          <h2 className="font-display text-3xl">How the work is split</h2>
+          <p className="mt-4 text-slate">
+            Most owners start with a custom website. That is the public face
+            of the business: pages that load fast on a phone, look like your
+            brand, and already have an SEO foundation (titles, slugs, schema,
+            and a sitemap that matches how people search).
+          </p>
+          <p className="text-slate">
+            SEO after launch is optional and billed monthly. It is the ongoing
+            work of keywords, citations, content, reviews, and technical
+            checks. AI visibility sits with that search work. It is how
+            ChatGPT and Google AI Overviews get clear facts about your
+            restaurant, trade, shop, or service so they can cite you instead
+            of a competitor.
+          </p>
+          <p className="text-slate">
+            You can hire one service or all three. I do the work myself, so
+            the site, the rankings, and the AI facts stay consistent. Open a
+            service below for what each one includes, or jump to{" "}
+            <Link href="/pricing" className="font-semibold text-cobalt">
+              pricing
+            </Link>{" "}
+            if you want the numbers first.
+          </p>
+        </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
             <article
@@ -40,7 +66,7 @@ export default function ServicesPage() {
               <p className="text-sm font-semibold uppercase tracking-[0.16em] text-amber">
                 {service.eyebrow}
               </p>
-              <h2 className="mt-3 font-display text-2xl sm:text-3xl">{service.title}</h2>
+              <h2 className="mt-3 font-display text-2xl text-ink sm:text-3xl">{service.title}</h2>
               <p className="mt-4 flex-1 leading-relaxed text-slate">
                 {service.description}
               </p>

@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     template: `%s | ${BRAND_NAME}`,
   },
   description:
-    "COR Web Solutions builds custom websites for local businesses: restaurants, bars, wineries, online stores, plumbers, contractors, and similar trades. SEO work helps people find you when they search.",
+    "COR Web Solutions builds custom websites for local businesses. SEO work helps restaurants, trades, and shops get found when people search.",
   keywords: [
     "custom website design",
     "local SEO",

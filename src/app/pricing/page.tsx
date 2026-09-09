@@ -245,11 +245,15 @@ export default function PricingPage() {
         <h2 className="mt-3 font-display text-3xl sm:text-4xl lg:text-5xl">
           Monthly, ongoing
         </h2>
+        <p className="mt-4 max-w-2xl text-sm font-semibold leading-relaxed text-amber sm:text-base">
+          Did you know websites mentioned on Google's AI Overview now get
+          around 34% of the clicks?
+        </p>
         <p className="mt-4 max-w-2xl leading-relaxed text-slate">
           SEO does not start automatically after launch. If you want keyword
           tracking, content, reviews, and AI visibility work, pick a monthly
-          tier. Growth and Full-Scale include Google Reviews on the website.
-          You can add SEO at launch or later.
+          tier. Growth and Full-Scale include Google Reviews on the website
+          and AI visibility. You can add SEO at launch or later.
         </p>
         <TierGrid tiers={seoTiers} kind="seo" />
       </section>

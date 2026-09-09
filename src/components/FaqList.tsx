@@ -35,18 +35,20 @@ function FaqItem({ item }: { item: Faq }) {
           </span>
         </button>
       </h3>
-      {open ? (
-        <div id={panelId} className="pb-5 pr-0 leading-relaxed text-slate sm:pr-10">
-          <p>{item.answer}</p>
-          {item.bullets ? (
-            <ul className="mt-3 list-disc space-y-1.5 pl-5">
-              {item.bullets.map((bullet) => (
-                <li key={bullet}>{bullet}</li>
-              ))}
-            </ul>
-          ) : null}
-        </div>
-      ) : null}
+      <div
+        id={panelId}
+        hidden={!open}
+        className="pb-5 pr-0 leading-relaxed text-slate sm:pr-10"
+      >
+        <p>{item.answer}</p>
+        {item.bullets ? (
+          <ul className="mt-3 list-disc space-y-1.5 pl-5">
+            {item.bullets.map((bullet) => (
+              <li key={bullet}>{bullet}</li>
+            ))}
+          </ul>
+        ) : null}
+      </div>
     </div>
   );
 }

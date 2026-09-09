@@ -8,7 +8,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Contact COR Web Solutions",
   description:
-    "Start a custom website, SEO, or AI visibility project. Send your name, email, business, and what you need. Messages come straight to me, and you get a confirmation.",
+    "Start a custom website or SEO project. Send your name, email, and what you need. It comes straight to me, and you get a confirmation.",
   path: "/contact",
   keywords: [
     "contact web designer",
@@ -51,16 +51,34 @@ export default function ContactPage() {
             A short form. No twelve-field sales maze. It reaches me directly,
             you get a confirmation, and I reply with next steps.
           </p>
+          <h2 className="mt-10 font-display text-3xl">Who this is for</h2>
+          <p className="mt-5 leading-relaxed text-slate">
+            Use this if you want a custom website, a rebuild off WordPress or
+            a builder, or monthly SEO. Typical clients are restaurants, bars,
+            wineries, shops, trades, and other local businesses that get found
+            by search, maps, or referral. I also build personal and portfolio
+            sites when you need a clean link to show your work.
+          </p>
+          <p className="mt-4 leading-relaxed text-slate">
+            I am one person, so the form is the start of a real conversation,
+            not a ticket queue. Tell me what you sell, whether you already
+            have a site, and what you want people to do when they land: call,
+            book, buy, or visit. Photos and a current URL help if you have
+            them. If you do not, we can still talk through the first version.
+          </p>
           <h2 className="mt-10 font-display text-3xl">What to expect</h2>
           <p className="mt-5 leading-relaxed text-slate">
             Once you submit this form I will get back to you shortly.
           </p>
           <p className="mt-4 leading-relaxed text-slate">
             We can schedule a call to go over what you want in your site, and
-            what I'll need from you to start building.
+            what I'll need from you to start building: photos, copy, hours,
+            services, and anything you already know you want on the pages.
           </p>
           <p className="mt-4 leading-relaxed text-slate">
             And that's it, I'll take it from there and get you your website.
+            If SEO or AI visibility is part of what you want, we decide that
+            as a separate monthly piece, not as a surprise after launch.
           </p>
           <p className="mt-8 text-sm text-slate">
             Prefer email? Write to me at{" "}
