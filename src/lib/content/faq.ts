@@ -24,7 +24,7 @@ export const faqs: readonly Faq[] = [
   {
     question: "How long does a custom website take?",
     answer:
-      "Typical build time by tier: Personal / Small 1 to 2 days, Foundation 2 to 3 days, Growth 5 to 8 days, and Scale 10 to 15 days. Timing depends on content, photos, and how fast I receive them. Content and photos come first, then design, build, SEO setup, and launch. Because I am one person, I take on a limited number of builds at a time so yours keeps moving.",
+      "Typical build time by tier: Personal / Small 1 to 2 days, Foundation 1 to 2 weeks, Growth 2 to 3 weeks, and Scale 4 to 5 weeks. Timing depends on content, photos, and how fast I receive them. Content and photos come first, then design, build, SEO setup, and launch. Because I am one person, I take on a limited number of builds at a time so yours keeps moving.",
   },
   {
     question: "How much does a custom website cost?",

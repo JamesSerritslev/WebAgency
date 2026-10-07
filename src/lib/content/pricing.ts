@@ -37,7 +37,7 @@ export const buildTiers: PricingTier[] = [
     minPrice: 700,
     maxPrice: 950,
     cadence: "one-time",
-    timeline: "2 to 3 days",
+    timeline: "1 to 2 weeks",
     summary:
       "A fast, clean custom site for a business that needs to exist online and be found locally.",
     includes: [
@@ -58,7 +58,7 @@ export const buildTiers: PricingTier[] = [
     maxPrice: 1900,
     cadence: "one-time",
     featured: true,
-    timeline: "5 to 8 days",
+    timeline: "2 to 3 weeks",
     summary:
       "For a business that wants the site to actively work for them: speed, SEO, and a design built around their brand.",
     includes: [
@@ -79,7 +79,7 @@ export const buildTiers: PricingTier[] = [
     minPrice: 3200,
     maxPrice: 4200,
     cadence: "one-time",
-    timeline: "10 to 15 days",
+    timeline: "4 to 5 weeks",
     summary:
       "For a business where the site needs to do real work: an integrated store, scheduling, event posting, and other integrations.",
     includes: [
