@@ -7,6 +7,6 @@ export const contentType = ogContentType;
 export default function Image() {
   return createOgImage({
     title: "Website and SEO pricing",
-    description: "One-time builds from $700. Monthly SEO from $750.",
+    description: "Website builds from $200. Monthly SEO from $750.",
   });
 }

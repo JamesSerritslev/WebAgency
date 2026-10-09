@@ -44,9 +44,9 @@ export default function FaqPage() {
             Custom means I write the site as original code. It is not a
             WordPress theme and not a page builder. That is why the sites stay
             faster and easier to rank than a template with a plugin stack.
-            Builds are quoted in tiers. Hosting and maintenance is a small
-            monthly fee after launch. Monthly SEO is separate, and nothing
-            extra starts unless you choose it.
+            Builds are quoted in tiers. Business builds include $42/mo after
+            launch for hosting, maintenance, and the domain. Monthly SEO is
+            separate, and nothing extra starts unless you choose it.
           </p>
           <p className="text-slate">
             The list below covers businesses I build for, why not WordPress,

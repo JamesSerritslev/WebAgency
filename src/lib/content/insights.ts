@@ -20,7 +20,7 @@ export const articles = [
     body: [
       "Plenty of local businesses start on WordPress because a cousin, a plugin pack, or a cheap theme made it feel easy. A year later the site is slow, the homepage looks like five other companies in town, and every small change needs another plugin.",
       "Search engines reward pages that load quickly, state a clear offer, and do not hide the real content behind extra scripts. Custom sites are written for those jobs. You ship only the code your restaurant, trade, shop, or store needs.",
-      "Ownership is the other gap. A page builder license, a fragile theme update, and a security plugin are not a foundation. When I build a site, the code is yours. Hosting and a small maintenance fee keep it online. You are not renting a template.",
+      "Ownership is the other gap. A page builder license, a fragile theme update, and a security plugin are not a foundation. When I build a site, the code is yours. On business builds, $42/mo covers hosting, maintenance, and the domain so the site stays online. You are not renting a template.",
       "That does not mean you cannot edit anything. Hours, services, events, and products can be set up for easy updates. The difference is that the design system and the SEO structure stay intact instead of drifting every time a plugin fights another plugin.",
       "If you book jobs, take reservations, or sell online, your site is a working tool. It should feel like the business, rank for the phrases customers type, and stay fast on a phone. That is the case for custom.",
     ],

@@ -29,12 +29,12 @@ export const faqs: readonly Faq[] = [
   {
     question: "How much does a custom website cost?",
     answer:
-      "Website builds are quoted as a one-page Personal / Small option at $350 - $450 for a resume, personal, or simple site, then three business tiers: Foundation $700 - $950, Growth $1,500 - $1,900, and Scale $3,200 - $4,200. The exact number depends on pages and integrations. After launch there is a small monthly hosting and maintenance fee. SEO is not bundled into that fee. It is a separate monthly charge if you want ongoing search work.",
+      "Website builds are quoted as a one-page Personal / Small option at $250 for a resume, personal, or simple site, then three business tiers: Foundation $200 - $450, Growth $1,000 - $1,400, and Scale $2,700 - $3,700. The exact number depends on pages and integrations. Business builds include a $42/mo fee after launch for hosting, maintenance, and the domain. Personal / Small does not. SEO is not bundled into that fee. It is a separate monthly charge if you want ongoing search work.",
   },
   {
     question: "What is the hosting and maintenance fee?",
     answer:
-      "It covers keeping the site online, updates that keep the build healthy, and small content or bug fixes that are part of normal upkeep. It does not include monthly SEO, citation work, backlinks, or AI visibility. Those are a separate service.",
+      "For Foundation, Growth, and Scale builds it is $42 per month. It covers hosting, maintenance, and the domain: I register and renew it, and you stay the legal owner. It also covers keeping the site online, updates that keep the build healthy, and small content or bug fixes that are part of normal upkeep. Personal / Small does not include this fee. It does not include monthly SEO, citation work, backlinks, or AI visibility. Those are a separate service.",
   },
   {
     question: "Does SEO continue automatically after the site launches?",
@@ -69,7 +69,7 @@ export const faqs: readonly Faq[] = [
   {
     question: "Who owns the website after launch?",
     answer:
-      "You do. The site, the code, and the content produced for your project are yours. Hosting and maintenance are billed as a small monthly fee so the site stays online. You are never locked into a page builder license.",
+      "You do. The site, the code, and the content produced for your project are yours. On business builds, $42/mo covers hosting, maintenance, and the domain, and you stay the legal owner of the domain. You are never locked into a page builder license.",
   },
   {
     question: "Can you improve a site that already exists?",

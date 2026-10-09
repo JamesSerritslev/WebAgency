@@ -10,7 +10,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Website and SEO pricing",
   description:
-    "COR Web Solutions website build tiers from $700 - $4,200 one-time, and monthly SEO from $750 - $2,850. Domain, revisions, and what each tier includes.",
+    "COR Web Solutions website builds from $200 - $3,700, $42/mo hosting and domain on business tiers, and monthly SEO from $750 - $2,850.",
   path: "/pricing",
   keywords: [
     "website design pricing",
@@ -40,15 +40,18 @@ function TierCard({
       }`}
     >
       <p className="mb-5 text-xs font-semibold uppercase tracking-[0.16em] text-amber">
-        {tier.cadence === "monthly" ? "Monthly" : "One-time"}
+        {tier.cadence === "monthly" ? "Monthly" : "Website build"}
       </p>
       <h3 className="font-display text-2xl sm:text-3xl">{tier.name}</h3>
       <p className={`mt-4 font-display text-3xl leading-none sm:text-4xl ${featured ? "text-amber" : "text-ink"}`}>
         {tier.price}
       </p>
       <p className={`mt-2 text-sm font-medium ${featured ? "text-chalk/65" : "text-slate"}`}>
-        {tier.cadence === "monthly" ? "per month" : "one-time project"}
-        {tier.timeline ? ` · ${tier.timeline}` : ""}
+        {tier.cadence === "monthly"
+          ? "per month"
+          : tier.timeline
+            ? tier.timeline
+            : "Website build"}
       </p>
       <p className={`mt-5 leading-relaxed ${featured ? "text-chalk/75" : "text-slate"}`}>
         {tier.summary}
@@ -106,7 +109,7 @@ export default function PricingPage() {
         data={offerCatalogSchema({
           name: "Website build tiers",
           description:
-            "One-time custom website builds, from a one-page personal site to Foundation, Growth, and Scale.",
+            "Custom website builds, from a one-page personal site to Foundation, Growth, and Scale.",
           path: "/pricing",
           tiers: [personalTier, ...buildTiers],
         })}
@@ -147,9 +150,8 @@ export default function PricingPage() {
             Clear numbers for the build, and for the search work after.
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-chalk/70">
-            Website builds are a one-time project. SEO is a separate monthly
-            service if you want rankings to keep moving. The exact quote lands
-            after a short call.
+            Website builds are quoted before the build. SEO is a separate monthly
+            service if you want rankings to keep moving.
           </p>
           <div className="mt-10 grid max-w-xl gap-4 sm:grid-cols-2">
             <article className="relative rounded-2xl bg-ink-soft p-5 transition hover:bg-ink-soft/80">
@@ -158,8 +160,8 @@ export default function PricingPage() {
                   Website builds
                 </Link>
               </h2>
-              <p className="mt-2 font-display text-3xl">$700</p>
-              <p className="mt-1 text-sm text-chalk/60">one-time</p>
+              <p className="mt-2 font-display text-3xl">$200</p>
+              <p className="mt-1 text-sm text-chalk/60">starting</p>
             </article>
             <article className="relative rounded-2xl bg-ink-soft p-5 transition hover:bg-ink-soft/80">
               <h2 className="text-xs font-semibold uppercase tracking-[0.16em] text-amber">
@@ -179,12 +181,14 @@ export default function PricingPage() {
           Website build
         </p>
         <h2 className="mt-3 font-display text-3xl sm:text-4xl lg:text-5xl">
-          One-time custom sites
+          Custom sites
         </h2>
         <p className="mt-4 max-w-2xl leading-relaxed text-slate">
           Three business build tiers, plus a one-page option for a resume or
           personal site. Every build is custom-coded and mobile responsive.
-          Domain registration is $40 per year on top of the build.
+          Business builds include $42/mo after launch for hosting, maintenance,
+          and the domain. I handle registration and renewals; you stay the
+          legal owner.
         </p>
         <article className="mt-10 flex flex-col gap-6 rounded-3xl border border-ink/10 bg-paper p-6 lg:flex-row lg:items-center lg:justify-between lg:gap-10 lg:p-8">
           <div className="max-w-2xl min-w-0">
@@ -203,7 +207,7 @@ export default function PricingPage() {
           <div className="min-w-0 shrink-0 lg:text-right">
             <p className="font-display text-3xl leading-none sm:text-4xl">{personalTier.price}</p>
             <p className="mt-2 text-sm font-medium text-slate">
-              one-time project · {personalTier.timeline}
+              {personalTier.timeline}
             </p>
             <div className="mt-5 lg:flex lg:justify-end">
               <PricingCta

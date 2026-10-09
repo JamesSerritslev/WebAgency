@@ -10,11 +10,14 @@ export type PricingTier = {
   timeline?: string;
 };
 
+/** Hosting and maintenance for business website builds (not Personal / Small). */
+export const HOSTING_MONTHLY = 42;
+
 export const personalTier: PricingTier = {
   name: "Personal / Small",
-  price: "$350 - $450",
-  minPrice: 350,
-  maxPrice: 450,
+  price: "$250",
+  minPrice: 250,
+  maxPrice: 250,
   cadence: "one-time",
   timeline: "1 to 2 days",
   summary:
@@ -26,16 +29,15 @@ export const personalTier: PricingTier = {
     "Basic on-page SEO (title, meta description, sitemap)",
     "1 round of revisions",
     "30 days of post-launch bug fixes",
-    "Domain registration and management: $40/yr (registration, renewal handling, DNS management)",
   ],
 };
 
 export const buildTiers: PricingTier[] = [
   {
     name: "Foundation",
-    price: "$700 - $950",
-    minPrice: 700,
-    maxPrice: 950,
+    price: "$200 - $450",
+    minPrice: 200,
+    maxPrice: 450,
     cadence: "one-time",
     timeline: "1 to 2 weeks",
     summary:
@@ -48,14 +50,14 @@ export const buildTiers: PricingTier[] = [
       "1 custom form with email automation",
       "1 round of revisions",
       "30 days of post-launch bug fixes",
-      "Domain registration and management: $40/yr (registration, renewal handling, DNS management)",
+      `$${HOSTING_MONTHLY}/mo hosting, maintenance, and domain (I register and renew it; you stay the legal owner)`,
     ],
   },
   {
     name: "Growth",
-    price: "$1,500 - $1,900",
-    minPrice: 1500,
-    maxPrice: 1900,
+    price: "$1,000 - $1,400",
+    minPrice: 1000,
+    maxPrice: 1400,
     cadence: "one-time",
     featured: true,
     timeline: "2 to 3 weeks",
@@ -70,14 +72,14 @@ export const buildTiers: PricingTier[] = [
       "2 custom forms with email automation",
       "2 rounds of revisions",
       "30 days of post-launch bug fixes",
-      "Domain registration and management: $40/yr (registration, renewal handling, DNS management)",
+      `$${HOSTING_MONTHLY}/mo hosting, maintenance, and domain (I register and renew it; you stay the legal owner)`,
     ],
   },
   {
     name: "Scale",
-    price: "$3,200 - $4,200",
-    minPrice: 3200,
-    maxPrice: 4200,
+    price: "$2,700 - $3,700",
+    minPrice: 2700,
+    maxPrice: 3700,
     cadence: "one-time",
     timeline: "4 to 5 weeks",
     summary:
@@ -92,7 +94,7 @@ export const buildTiers: PricingTier[] = [
       "Unlimited custom forms with email automation",
       "3 rounds of revisions",
       "30 days of post-launch bug fixes",
-      "Domain registration and management: $40/yr (registration, renewal handling, DNS management)",
+      `$${HOSTING_MONTHLY}/mo hosting, maintenance, and domain (I register and renew it; you stay the legal owner)`,
     ],
   },
 ];
@@ -156,7 +158,6 @@ export const seoTiers: PricingTier[] = [
 ];
 
 export const buildNotes = [
-  "I register the domain under my COR Web Solutions account, with you listed as the legal owner (registrant) on WHOIS. You can request the transfer or auth code anytime.",
-  "I bill the $40/yr domain fee annually ahead of the renewal date, invoiced separately from the build.",
-  "Changes after the 30-day bug-fix window are billed hourly at $40/hr, or bundled into a monthly SEO tier.",
+  `On business builds, the $${HOSTING_MONTHLY}/mo fee covers hosting, maintenance, and the domain. I register and renew it under my COR Web Solutions account, with you listed as the legal owner on WHOIS. You can request the transfer or auth code anytime.`,
+  `Personal / Small does not include the $${HOSTING_MONTHLY}/mo fee. Changes after the 30-day bug-fix window are billed hourly at $40/hr, or bundled into a monthly SEO tier.`,
 ];
